@@ -1,16 +1,16 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (2.3.5)
-      actionpack (= 2.3.5)
-    actionpack (2.3.5)
-      activesupport (= 2.3.5)
-      rack (~> 1.0.0)
-    activerecord (2.3.5)
-      activesupport (= 2.3.5)
-    activeresource (2.3.5)
-      activesupport (= 2.3.5)
-    activesupport (2.3.5)
+    actionmailer (2.3.8)
+      actionpack (= 2.3.8)
+    actionpack (2.3.8)
+      activesupport (= 2.3.8)
+      rack (~> 1.1.0)
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activeresource (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
     authlogic (2.1.6)
       activesupport
     columnize (0.3.2)
@@ -28,13 +28,13 @@ GEM
       rake (>= 0.8.1)
     linecache (0.43)
     mime-types (1.16)
-    rack (1.0.1)
-    rails (2.3.5)
-      actionmailer (= 2.3.5)
-      actionpack (= 2.3.5)
-      activerecord (= 2.3.5)
-      activeresource (= 2.3.5)
-      activesupport (= 2.3.5)
+    rack (1.1.0)
+    rails (2.3.8)
+      actionmailer (= 2.3.8)
+      actionpack (= 2.3.8)
+      activerecord (= 2.3.8)
+      activeresource (= 2.3.8)
+      activesupport (= 2.3.8)
       rake (>= 0.8.3)
     rake (0.8.7)
     rest-client (1.6.1)
@@ -72,7 +72,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   heroku
-  rails (= 2.3.5)
+  rails (= 2.3.8)
   ruby-debug
   sqlite3-ruby
   taps (= 0.3.15)
