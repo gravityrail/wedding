@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 2) do
 
   create_table "domains", :force => true do |t|
-    t.string   "name",            :limit => 64, :null => false
+    t.string   "name"
     t.boolean  "uses_hsts"
     t.boolean  "uses_https"
     t.boolean  "mixed_content"
@@ -20,13 +20,11 @@ ActiveRecord::Schema.define(:version => 2) do
     t.boolean  "all_identifying"
     t.boolean  "secure_cookies"
     t.boolean  "ssl_valid"
-    t.string   "key_strength",    :limit => 32
+    t.string   "key_strength"
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "domains", ["name"], :name => "index_domains_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "login",                              :null => false

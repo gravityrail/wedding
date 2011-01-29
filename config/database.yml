@@ -2,11 +2,9 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 
 development:
-  adapter: mysql
-  database: gothttps_development
-  username: gh_development
-  host: 127.0.0.1
-  password: ghdevl1
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
   timeout: 5000
 
 # Warning: The database defined as 'test' will be erased and
