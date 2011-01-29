@@ -1,3 +1,11 @@
+== Got HTTPS?
+
+Setup:
+
+ $ rake db:migrate
+ $ script/console
+ 
+
 == Welcome to Rails
 
 Rails is a web-application and persistence framework that includes everything
