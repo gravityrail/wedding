@@ -1,0 +1,53 @@
+<p>
+  <b>Name:</b>
+  <%=h @domain.name %>
+</p>
+
+<p>
+  <b>Uses hsts:</b>
+  <%=h @domain.uses_hsts %>
+</p>
+
+<p>
+  <b>Uses https:</b>
+  <%=h @domain.uses_https %>
+</p>
+
+<p>
+  <b>Mixed content:</b>
+  <%=h @domain.mixed_content %>
+</p>
+
+<p>
+  <b>All https:</b>
+  <%=h @domain.all_https %>
+</p>
+
+<p>
+  <b>All identifying:</b>
+  <%=h @domain.all_identifying %>
+</p>
+
+<p>
+  <b>Secure cookies:</b>
+  <%=h @domain.secure_cookies %>
+</p>
+
+<p>
+  <b>Ssl valid:</b>
+  <%=h @domain.ssl_valid %>
+</p>
+
+<p>
+  <b>Key strength:</b>
+  <%=h @domain.key_strength %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @domain.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_domain_path(@domain) %> |
+<%= link_to 'Back', domains_path %>
