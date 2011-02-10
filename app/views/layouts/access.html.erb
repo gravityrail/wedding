@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+    <head> 
+        <title>Access</title> 
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+                <meta name="description" content="Access: Mobilizing for Digital Freedom"> 
+<meta name="keywords" content="internet, democracy, citizen media, censorship, firewall, China, Iran, Access, Access Now"> 
+            <meta name='description' content='' /> 
+    <meta name='robots' content='index,follow,archive' /> 
+ 
+    <link rel='schema.DC' href='http://purl.org/dc/elements/1.1/' /> 
+    <link rel='schema.DCTERMS' href='http://purl.org/dc/terms/' /> 
+    <meta name='DC.description' content='' /> 
+    <meta name='DC.date.created' scheme='DCTERMS.W3CDTF' content='2011-02-10T01:07:54-0500' /> 
+    <meta name='DC.date.modified' scheme='DCTERMS.W3CDTF' content='1299-09-21T07:00:00-0500' /> 
+    <meta name='DC.date.valid' scheme='DCTERMS.W3CDTF' content='2011-02-16T03:07:54-0500' /> 
+    
+        <%= javascript_include_tag 'jquery-1.4.4.min.js' %>
+<!--        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+<!--
+        <script type="text/javascript" src="https://use.typekit.com/stj5wfh.js"></script> 
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
+-->
+        <script type="text/javascript" src="/javascripts/jquery.clearinginput.js"></script> 
+<!--
+        <script type="text/javascript" src="/page/-/js/jquery.cycle.min.js"></script> 
+        <script type="text/javascript" src="/page/-/js/jquery-ui-1.8rc3.custom.min.js"></script> 
+        <script type="text/javascript" src="/page/-/js/hoverIntent.js"></script> 
+        <script type="text/javascript" src="/page/-/js/superfish.js"></script> 
+        <script type="text/javascript" src="/page/-/js/swfobject.js"></script> 
+        <script type="text/javascript" src="/page/-/js/jquery.cookie.js"></script> 
+-->
+<!--         <script type="text/javascript" src="/js/index"></script>  -->
+        
+        <link rel="shortcut icon" href="/favicon.ico"> 
+
+        <%= stylesheet_link_tag :all %>
+        <%= formtastic_stylesheet_link_tag %>
+        <%= javascript_include_tag 'rails' %>
+        <%= javascript_include_tag 'gothttps' %>
+        <%= javascript_include_tag 'access' %>
+        <%= csrf_meta_tag %>
+        
+        <!--[if IE 6]>
+          <link type="text/css" rel="stylesheet" href="https://www.accessnow.org/?css=styles/ie6.v.1269642185"/>
+          <script type="text/javascript" src="/page/-/js/iepngfix_tilebg.js"></script>
+        <![endif]--> 
+            
+        <!-- blue_source_tracking enabled --> 
+    
+    </head> 
+    <body id="action"> <% www = 'http://accessnow.org' %>
+ 
+        <div id="container"> 
+            <div id="header" class="clearfix"> 
+                <div id="header-tagline">Mobilizing for Global Digital Freedom</div><!-- /#header-tagline --> 
+                <a id="header-logo" href="<%= www %>/" title="Access">Access</a><!-- /#header-logo --> 
+                <%= render :partial=>'shared/signup' %>
+                <!--form id="header-language">
+                    <fieldset>
+                    <legend><span>Choose your language:</span></legend>
+                    <select name="language">
+                        <option value="EN">English</option>
+                    </select>
+                    </fieldset>
+                </form--><!-- /#header-language --> 
+                <div id="header-ad"> 
+                    <!--a href="http://www.europarl.europa.eu/comparl/afet/droi/sakharov/inspiration_en.htm" target="_blank"><img src="/page/-/ad/banner-sakharov-468x60.jpg" width="468" height="60" border="0" /></a--> 
+                </div><!-- /#header-ad --> 
+                <ul id="header-nav" class="sf-menu"> 
+                    <li><a href="<%= www %>/" title="Home">Home</a></li> 
+                    <li><a href="<%= www %>/campaigns" title="Campaigns">Campaigns</a></li> 
+                    <li> 
+                        <a href="<%= www %>/policy-activism/lang/13" title="Policy & Activism">Policy & Activism</a> 
+                        <ul> 
+                            <li><a href="<%= www %>/policy-activism/lang/13" title="Policy & Activism">Policy & Activism</a></li> 
+                            <li><a href="<%= www %>/policy-activism/videos" title="Videos">Videos</a></li> 
+                            <li><a href="<%= www %>/policy-activism/docs" title="Documents">Documents + Links</a></li> 
+                            <li><a href="<%= www %>/policy-activism/news" title="News">News</a></li> 
+                            <li><a href="<%= www %>/policy-activism/activist-alerts" title="Activist Alerts">Activist Alerts</a></li> 
+                            <li><a href="<%= www %>/policy-activism/press-blog" title="Press/Blog">Press/Blog</a></li> 
+                        </ul> 
+                    </li> 
+                    <li><a href="<%= www %>/video" title="Video">Video</a></li> 
+                    <li><a href="<%= www %>/proxy-cloud" title="Proxy Cloud">Proxy Cloud</a></li> 
+                    <li> 
+                        <a href="<%= www %>/about" title="About">About</a> 
+                        <ul> 
+                            <li><a href="<%= www %>/about" title="About">About</a></li> 
+                            <li><a href="<%= www %>/about/access-in-the-news" title="Access in the News">Access in the News</a></li> 
+                        </ul> 
+                    </li> 
+                    <li><a href="https://donate.accessnow.org/page/contribute/donate" title="Donate">Donate</a></li> 
+                </ul><!-- /#header-nav --> 
+            </div><!-- /#header --> 
+            <div id="main" class="base clearfix"> 
+            
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+              <div id="content">
+                <%= yield %>
+              </div>
+              
+                <div id="footer"> 
+                    <ul id="footer-nav" class="clearfix"> 
+                        <li><a href="<%= www %>/" title="Home">Home</a></li> 
+                        <li><a href="<%= www %>/campaigns" title="Campaigns">Campaigns</a></li> 
+                        <li><a href="<%= www %>/policy-activism/lang/13" title="Policy & Activism">Policy & Activism</a></li> 
+                        <li><a href="<%= www %>/video" title="Video">Video</a></li> 
+                        <li><a href="<%= www %>/proxy-cloud" title="Proxy Cloud">Proxy Cloud</a></li> 
+                        <li><a href="<%= www %>/about" title="About">About</a></li> 
+                        <li><a href="https://donate.accessnow.org/page/contribute/donate" title="Donate">Donate</a></li>    	           
+                        <li><a href="<%= www %>/page/s/contact" title="Contact">Contact</a></li> 
+                        <li><a href="<%= www %>/pages/privacy-policy" title="Privacy Policy">Privacy Policy</a></li> 
+                    </ul><!-- /#footer-nav --> 
+                    <ul id="footer-socnet" class="clearfix"> 
+                        <li>Follow us on: <a href="http://www.twitter.com/accessnow" target="_blank" title="Follow us on Twitter">Twitter</a></li> 
+                        <!--li><a href="/" title="Add us on Facebook">Facebook</a></li--> 
+                        <!--li><a href="/" title="Add us on MySpace">MySpace</a></li--> 
+                        <li><a href="http://www.youtube.com/accessorg" target="_blank" title="Watch our videos on YouTube">YouTube</a></li> 
+                    </ul><!-- /#footer-socnet --> 
+                    <p>&copy; Accessnow.org</p> 
+                </div><!-- /#footer --> 
+ 
+            </div><!-- /#main --> 
+        </div><!-- /#container --> 
+    </body> 
+</html>

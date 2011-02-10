@@ -1,0 +1,30 @@
+<%= semantic_form_for(@domain) do |f| %>
+  <% if @domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
+
+      <ul>
+      <% @domain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.inputs :https do %>
+    <%= f.input :name, :label=>'Site Name' %>
+    <%= f.input :uses_hsts, :label=>'Uses HSTS?', :hint=>'HTTP Strict Transport Security' %>
+    <%= f.input :uses_https, :label=>'Uses HTTPS?' %>
+    <%= f.input :mixed_content, :label=>'Mixed Content?' %>
+    <%= f.input :all_https, :label=>'All HTTPS?' %>
+    <%= f.input :all_identifying, :label=>'All Identifying?' %>
+    <%= f.input :secure_cookies, :label=>'Uses Secure Cookies?' %>
+    <%= f.input :ssl_valid, :label=>'Valid SSL Certificate?' %>
+    <%= f.input :key_strength, :label=>'Key Strength' %>
+    <%= f.input :notes, :label=>'Notes' %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

@@ -1,61 +1,6 @@
-<h1>New domain</h1>
+<h2>Add New Domain</h2>
 
-<%= error_messages_for :domain %>
-
-<% form_for(@domain) do |f| %>
-  <p>
-    <b>Name</b><br />
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <b>Uses hsts</b><br />
-    <%= f.check_box :uses_hsts %>
-  </p>
-
-  <p>
-    <b>Uses https</b><br />
-    <%= f.check_box :uses_https %>
-  </p>
-
-  <p>
-    <b>Mixed content</b><br />
-    <%= f.check_box :mixed_content %>
-  </p>
-
-  <p>
-    <b>All https</b><br />
-    <%= f.check_box :all_https %>
-  </p>
-
-  <p>
-    <b>All identifying</b><br />
-    <%= f.check_box :all_identifying %>
-  </p>
-
-  <p>
-    <b>Secure cookies</b><br />
-    <%= f.check_box :secure_cookies %>
-  </p>
-
-  <p>
-    <b>Ssl valid</b><br />
-    <%= f.check_box :ssl_valid %>
-  </p>
-
-  <p>
-    <b>Key strength</b><br />
-    <%= f.text_field :key_strength %>
-  </p>
-
-  <p>
-    <b>Notes</b><br />
-    <%= f.text_field :notes %>
-  </p>
-
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
-
+<div id="action-content" class="clearfix">
+<%= render 'form' %>
 <%= link_to 'Back', domains_path %>
+</div>

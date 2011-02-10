@@ -1,3 +1,9 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def tick(value)
+    if(value)
+      '<span class="tick">yes</span>'
+    else
+      '<span class="cross">no</span>'
+    end
+  end
 end

@@ -1,53 +1,58 @@
+<h2>Domain Summary</h2>
+<div id="action-content" class="clearfix">
+<p id="notice"><%= notice %></p>
+
 <p>
   <b>Name:</b>
-  <%=h @domain.name %>
+  <%= @domain.name %>
 </p>
 
 <p>
   <b>Uses hsts:</b>
-  <%=h @domain.uses_hsts %>
+  <%= @domain.uses_hsts %>
 </p>
 
 <p>
   <b>Uses https:</b>
-  <%=h @domain.uses_https %>
+  <%= @domain.uses_https %>
 </p>
 
 <p>
   <b>Mixed content:</b>
-  <%=h @domain.mixed_content %>
+  <%= @domain.mixed_content %>
 </p>
 
 <p>
   <b>All https:</b>
-  <%=h @domain.all_https %>
+  <%= @domain.all_https %>
 </p>
 
 <p>
   <b>All identifying:</b>
-  <%=h @domain.all_identifying %>
+  <%= @domain.all_identifying %>
 </p>
 
 <p>
   <b>Secure cookies:</b>
-  <%=h @domain.secure_cookies %>
+  <%= @domain.secure_cookies %>
 </p>
 
 <p>
   <b>Ssl valid:</b>
-  <%=h @domain.ssl_valid %>
+  <%= @domain.ssl_valid %>
 </p>
 
 <p>
   <b>Key strength:</b>
-  <%=h @domain.key_strength %>
+  <%= @domain.key_strength %>
 </p>
 
 <p>
   <b>Notes:</b>
-  <%=h @domain.notes %>
+  <%= @domain.notes %>
 </p>
 
 
-<%= link_to 'Edit', edit_domain_path(@domain) %> |
-<%= link_to 'Back', domains_path %>
+<%= link_to raw('&laquo; Domain List'), domains_path %>
+| <%= link_to 'Edit', edit_domain_path(@domain) %>
+</div>

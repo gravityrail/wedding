@@ -2,7 +2,7 @@ class DomainsController < ApplicationController
   # GET /domains
   # GET /domains.xml
   def index
-    @domains = Domain.find_latest
+    @domains = Domain.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,18 +32,6 @@ class DomainsController < ApplicationController
     end
   end
 
-  # GET /domains/1/change
-  def change
-    # a change is essentially a whole new record. 
-    @domain = Domain.find(params[:id])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @domain }
-    end
-
-  end
-
   # GET /domains/1/edit
   def edit
     @domain = Domain.find(params[:id])
@@ -56,8 +44,7 @@ class DomainsController < ApplicationController
 
     respond_to do |format|
       if @domain.save
-        flash[:notice] = 'Domain was successfully created.'
-        format.html { redirect_to(@domain) }
+        format.html { redirect_to(@domain, :notice => 'Domain was successfully created.') }
         format.xml  { render :xml => @domain, :status => :created, :location => @domain }
       else
         format.html { render :action => "new" }
@@ -73,8 +60,7 @@ class DomainsController < ApplicationController
 
     respond_to do |format|
       if @domain.update_attributes(params[:domain])
-        flash[:notice] = 'Domain was successfully updated.'
-        format.html { redirect_to(@domain) }
+        format.html { redirect_to(@domain, :notice => 'Domain was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

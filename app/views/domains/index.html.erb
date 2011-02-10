@@ -1,39 +1,44 @@
-<h1>Listing domains</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Uses hsts</th>
-    <th>Uses https</th>
-    <th>Mixed content</th>
-    <th>All https</th>
-    <th>All identifying</th>
-    <th>Secure cookies</th>
-    <th>Ssl valid</th>
-    <th>Key strength</th>
-    <th>Notes</th>
-  </tr>
-
-<% for domain in @domains %>
-  <tr>
-    <td><%=h domain.name %></td>
-    <td><%=h domain.uses_hsts %></td>
-    <td><%=h domain.uses_https %></td>
-    <td><%=h domain.mixed_content %></td>
-    <td><%=h domain.all_https %></td>
-    <td><%=h domain.all_identifying %></td>
-    <td><%=h domain.secure_cookies %></td>
-    <td><%=h domain.ssl_valid %></td>
-    <td><%=h domain.key_strength %></td>
-    <td><%=h domain.notes %></td>
-    <td><%= link_to 'Show', domain %></td>
-    <td><%= link_to 'Modify', domain, :id => id, :method => :change %></tf>
-<!--    <td><%= link_to 'Edit', edit_domain_path(domain) %></td> -->
-    <td><%= link_to 'Destroy', domain, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-<td><%= link_to 'New Domain', new_domain_path %></tf>
-
-<br />
-
+<h2>Domain Database</h2>
+<div id="action-content" class="clearfix">
+  <p>
+  <%= link_to 'Add a New Domain', new_domain_path, :class=>'bigbutton' %>
+  </p>
+  <table id="domains">
+    <tr>
+      <th>Name</th>
+      <th>HSTS</th>
+      <th>HTTPS</th>
+      <th>Mixed</th>
+      <th>All HTTPS</th>
+      <th>All Ident</th>
+      <th>Secure Cookies</th>
+      <th>Valid SSL</th>
+      <th>Key Strength</th>
+      <th>Show</th>
+    </tr>
+  
+  <% @domains.each do |domain| %>
+    <tr class="summary">
+      <td><%= domain.name %></td>
+      <td><%= raw(tick domain.uses_hsts) %></td>
+      <td><%= raw tick domain.uses_https %></td>
+      <td><%= raw tick domain.mixed_content %></td>
+      <td><%= raw tick domain.all_https %></td>
+      <td><%= raw tick domain.all_identifying %></td>
+      <td><%= raw tick domain.secure_cookies %></td>
+      <td><%= raw tick domain.ssl_valid %></td>
+      <td><%= domain.key_strength %></td>
+      <td><div class="arrow"></div></td>
+      
+    </tr>
+    <tr class="detail">
+      <td colspan="10">
+        <%= link_to 'Show', domain %>
+        <%= domain.notes %>
+        <%= link_to 'Edit', edit_domain_path(domain) %>
+      <!--<%= link_to 'Destroy', domain, :confirm => 'Are you sure?', :method => :delete %>-->
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>

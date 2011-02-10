@@ -1,0 +1,40 @@
+#content {
+  width: 960px;
+  font-size: 120%;
+}
+
+#domains { border-collapse:collapse;}
+#domains h4 { margin:0px; padding:0px;}
+#domains img { float:right;}
+#domains ul { margin:10px 0 10px 40px; padding:0px;}
+#domains th { background:#77C043 repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}
+#domains td { color:#000; padding:7px 15px; }
+#domains tr { background-color:#AAE083; }
+#domains tr.summary:hover {background-color:#BBF093;}
+#domains tr.odd td { background:#fff repeat-x scroll center left; cursor:pointer; }
+#domains div.arrow { background:transparent url(/images/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+#domains div.up { background-position:0px 0px;}
+
+#domains .tick {
+  text-indent: -4000px;
+  display: block;
+  background-image: url(/images/tick-icon.png);
+  width: 16px;
+  height: 16px;
+}
+
+#domains .cross {
+  text-indent: -4000px;
+  display: block;
+  background-image: url(/images/cross-icon.png);
+  width: 16px;
+  height: 16px;
+}
+
+.bigbutton {
+  background-color: #77C043;
+  color: white;
+  font-size: 14;
+  font-weight: bold;
+  padding: 10px 10px;
+}
