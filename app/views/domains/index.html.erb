@@ -1,19 +1,25 @@
-<h2>Domain Database</h2>
+<h2>Got HTTPS?</h2>
+<p id="project_info">
+  A joint project of the <a href="http://eff.org">EFF</a> and <a href="http://accessnow.org">Access</a>.
+</p>
 <div id="action-content" class="clearfix">
   <p>
-  <%= link_to 'Add a New Domain', new_domain_path, :class=>'bigbutton' %>
+  <%= link_to 'Click here to add a domain', new_domain_path, :class=>'bigbutton' %>
   </p>
+  <div class="bubblecontainer">
+    <%= render :partial=>'shared/help' %>
+  </div>
   <table id="domains">
     <tr>
       <th>Name</th>
-      <th>HSTS</th>
-      <th>HTTPS</th>
-      <th>Mixed</th>
-      <th>All HTTPS</th>
-      <th>All Ident</th>
-      <th>Secure Cookies</th>
-      <th>Valid SSL</th>
-      <th>Key Strength</th>
+      <th class="bubblehelp" id="hsts">HSTS</th>
+      <th class="bubblehelp" id="https">HTTPS</th>
+      <th class="bubblehelp" id="mixed">Mixed</th>
+      <th class="bubblehelp" id="allhttps">All HTTPS</th>
+      <th class="bubblehelp" id="ident">All Ident</th>
+      <th class="bubblehelp" id="securecookies">Secure Cookies</th>
+      <th class="bubblehelp" id="validssl">Valid SSL</th>
+      <th class="bubblehelp" id="key">Key Strength</th>
       <th>Show</th>
     </tr>
   
@@ -41,4 +47,8 @@
     </tr>
   <% end %>
   </table>
+  <p>&nbsp;</p>
+  <p>
+  <a style="padding: 20px 10px;" href="http://eff.org" target="_blank"><img src="/images/eff.gif" alt="EFF Web Site"/></a>
+  </p>
 </div>
