@@ -20,12 +20,16 @@ jQuery(document).ready(function()
   
   jQuery('.bubble').hide();
   
-  
-  
-  jQuery('.bubblehelp').append('<img src="/images/help-icon.png"/>').click(function(e){
+  jQuery('.bubblehelp')
+    .append('<img src="/images/help-icon.png"/>')
+    .click(function(e){
+    
     var element = jQuery(this);
     var help_id = element.attr('id')+'_info';
     var popup = jQuery('#'+help_id);
+    
+    //hide other bubbles
+//    jQuery('.bubble').hide();
     
     popup.slideToggle();
     
