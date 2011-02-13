@@ -22,5 +22,8 @@ Gothttps::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  ENV['fbappid'] = "151279624928505"
+  ENV['fbsecret'] = "e8facec75db47c61ac0509f8fee1f788"
 end
 

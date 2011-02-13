@@ -46,4 +46,7 @@ Gothttps::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  ENV['fbappid'] = "189569747733018"
+  ENV['fbsecret'] = "52629dbf7051474a6698904661e29f12"
 end

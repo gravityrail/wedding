@@ -13,6 +13,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+#  require 'omniauth'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating an user. By default is
@@ -43,10 +44,22 @@ Devise.setup do |config|
   # from others authentication tools as :clearance_sha1, :authlogic_sha512 (then
   # you should set stretches above to 20 for default behavior) and :restful_authentication_sha1
   # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :bcrypt
+  #config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
   config.pepper = "f31cca3604ca6708e5d2c20c4b76b42fc8d271303544f24c7a9632a3f5a6f539149706fe92678935ec54c887c1e9c5ad06a2e347a251c633937d37783c511497"
+
+  config.omniauth :facebook, ENV['fbappid'], ENV['fbsecret']
+  
+  config.warden do |manager|
+  
+    manager.default_strategies :facebook
+
+    manager[:facebook_callback_url] = '/auth/facebook/callback'
+    manager[:facebook_app_id]       = ENV['fbappid']
+    manager[:facebook_app_secret]   = ENV['fbsecret']
+    manager[:facebook_scopes]       = 'email,offline_access'
+  end
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time

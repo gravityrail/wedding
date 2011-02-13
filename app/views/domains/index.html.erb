@@ -1,8 +1,10 @@
+<%= content_for :title do %>
 <h2>Got HTTPS?</h2>
+<% end %>
+
 <p id="project_info">
   A joint project of the <a href="http://eff.org">EFF</a> and <a href="http://accessnow.org">Access</a>.
 </p>
-<div id="action-content" class="clearfix">
   <p>
   <%= link_to 'Click here to add a domain', new_domain_path, :class=>'bigbutton' %>
   </p>
@@ -51,4 +53,3 @@
   <p>
   <a style="padding: 20px 10px;" href="http://eff.org" target="_blank"><img src="/images/eff.gif" alt="EFF Web Site"/></a>
   </p>-->
-</div>

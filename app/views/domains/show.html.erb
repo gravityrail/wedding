@@ -1,5 +1,7 @@
+<%= content_for :title do %>
 <h2>Domain Summary</h2>
-<div id="action-content" class="clearfix">
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -55,4 +57,3 @@
 
 <%= link_to raw('&laquo; Domain List'), domains_path %>
 | <%= link_to 'Edit', edit_domain_path(@domain) %>
-</div>

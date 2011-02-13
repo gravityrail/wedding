@@ -98,7 +98,10 @@
               <p class="notice"><%= notice %></p>
               <p class="alert"><%= alert %></p>
               <div id="content">
-                <%= yield %>
+                <%= yield(:title) %>
+                <div id="action-content">
+                  <%= yield %>
+                </div>
               </div>
               
                 <div id="footer"> 
