@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :opt_in
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :opt_in, :fb_id
 
   validates_presence_of :email, :message => "please fill out the required fields"
   validates_uniqueness_of :email
@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
       
       props = {
         :email => attrs['email'],
-        :fb_uid => attrs['id'],
+        :fb_id => attrs['id'],
         :first_name => attrs['first_name'],
         :last_name => attrs['last_name']
       }

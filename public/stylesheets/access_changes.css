@@ -67,6 +67,10 @@
   right: 20px;
 }
 
+#account a:hover {
+  color: white;
+}
+
 .login-button {
   background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) no-repeat scroll left -188px #29447E;
   display: inline-block;
