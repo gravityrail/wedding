@@ -15,6 +15,7 @@ gem 'simple-navigation'
 gem 'vestal_versions'
 gem 'formtastic'
 #gem 'table_builder'
+gem 'ssl_requirement'
 
 # Use unicorn as the web server
 # gem 'unicorn'
