@@ -14,6 +14,8 @@ Gothttps::Application.routes.draw do
 
   match "/logout" => "users/omniauth_callbacks#destroy", :as => :signout
 
+  match "/download" => "pages#download_users"
+
   root :to => 'domains#index'
   
   # The priority is based upon order of creation:
