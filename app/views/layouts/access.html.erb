@@ -94,11 +94,10 @@
                 </ul><!-- /#header-nav --> 
             </div><!-- /#header --> 
             <div id="main" class="base clearfix"> 
-            
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
               <div id="content">
                 <%= yield(:title) %>
+                <% if notice %><p class="notice"><%= notice %></p><% end %>
+                <% if alert %><p class="alert"><%= alert %></p><% end %>
                 <div id="action-content">
                   <%= yield %>
                 </div>

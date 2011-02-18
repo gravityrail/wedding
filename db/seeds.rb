@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+puts "Seeding Database for Rails env: #{Rails.env}"
+
+puts "Creating Admin"
+User.create([
+  {:name => "Administrator", 
+   :email => "goldsoudns@gmail.com", 
+   :password => "#1muppet", 
+   :password_confirmation => "#1muppet",
+   :role => "admin"}
+])

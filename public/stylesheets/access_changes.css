@@ -7,6 +7,7 @@
 #domains h4 { margin:0px; padding:0px;}
 #domains ul { margin:10px 0 10px 40px; padding:0px;}
 #domains th { background:#77C043 repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left; font-size: 90%;}
+#domains th a {color: white;}
 #domains td { color:#000; padding:7px 15px; }
 #domains tr { background-color:#AAE083; }
 #domains tr.summary:hover {background-color:#BBF093;}
@@ -55,6 +56,20 @@
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+
+p.alert {
+  margin-left: 20px;
+  background-color: #FBB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+p.notice {
+  margin-left: 20px;
+  background-color: #FFB;
+  padding: 10px;
+  margin-right: 40px;
 }
 
 /* facebook */

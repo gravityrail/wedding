@@ -11,7 +11,11 @@ Gothttps::Application.routes.draw do
                      :sign_up => 'signup' }
   
   resources :domains
-
+  
+  namespace :admin do
+    resources :users
+  end
+  
   match "/logout" => "users/omniauth_callbacks#destroy", :as => :signout
 
   match "/download" => "pages#download_users"

@@ -1,0 +1,38 @@
+<%= content_for :title do %>
+<h2>User Admin</h2>
+<% end %>
+
+<% form_for [:admin, @search] do |f| %>
+  <p>SEARCH</p>
+  <p>
+  <%= f.label 'Search name and email' %>
+  <%= f.text_field :email_contains %>
+  </p>
+  <%-# f.text_field :title_like, :size => 15 %>
+  <%= f.submit "Search" %>
+  <%= link_to "Clear", '#', :onclick=>"$(this).parent.parent.reset(); return false;" %>
+  <p><%= @search.count %> Matches</p>
+<% end %>
+
+
+
+<table id="domains">
+  <thead>
+    <tr>
+      <th><%= sort_link @search, 'email', 'Email' %></th>
+      <th><%= sort_link @search, 'first_name', 'First Name' %></th>
+      <th><%= sort_link @search, 'last_name', 'Last Name' %></th>
+      <th><%= sort_link @search, 'role', 'Role' %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+    <td><%= user.role %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

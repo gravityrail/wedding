@@ -12,11 +12,16 @@ gem 'warden-facebook', :git=>'git://github.com/maca/warden-facebook.git'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "will_paginate"
 gem 'simple-navigation'
-gem 'vestal_versions'
+gem 'vestal_versions', :git => 'git://github.com/laserlemon/vestal_versions.git'
 gem 'formtastic'
 #gem 'table_builder'
 gem 'ssl_requirement'
 gem "fastercsv"
+gem "annotate"
+gem 'cancan'
+gem 'will_paginate'
+#gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
+gem 'meta_search'
 
 # Use unicorn as the web server
 # gem 'unicorn'
