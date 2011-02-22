@@ -8,11 +8,25 @@
 
 puts "Seeding Database for Rails env: #{Rails.env}"
 
-puts "Creating Admin"
+puts "Creating Admins"
 User.create([
-  {:name => "Administrator", 
-   :email => "goldsoudns@gmail.com", 
+  {:name => "Dan", 
+   :email => "goldsounds@gmail.com", 
    :password => "#1muppet", 
    :password_confirmation => "#1muppet",
+   :role => "admin"}
+])
+User.create([
+  {:name => "Jochai", 
+   :email => "jochai@accessnow.org", 
+   :password => "abX954g", 
+   :password_confirmation => "abX954g",
+   :role => "admin"}
+])
+User.create([
+  {:name => "Brett", 
+   :email => "brett@accessnow.org", 
+   :password => "678vka", 
+   :password_confirmation => "678vka",
    :role => "admin"}
 ])
