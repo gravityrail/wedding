@@ -2,12 +2,13 @@
 <h2>User Admin</h2>
 <% end %>
 
-<% form_for [:admin, @search] do |f| %>
-  <p>SEARCH</p>
-  <p>
-  <%= f.label 'Search name and email' %>
-  <%= f.text_field :email_contains %>
-  </p>
+<% semantic_form_for [:admin, @search] do |f| %>
+  <h3>Search</h3>
+  <% f.inputs do %>
+    <%= f.input :email_contains %>
+    <%= f.input :first_name_contains %>
+    <%= f.input :last_name_contains %>
+  <% end %>
   <%-# f.text_field :title_like, :size => 15 %>
   <%= f.submit "Search" %>
   <%= link_to "Clear", '#', :onclick=>"$(this).parent.parent.reset(); return false;" %>
@@ -23,6 +24,7 @@
       <th><%= sort_link @search, 'first_name', 'First Name' %></th>
       <th><%= sort_link @search, 'last_name', 'Last Name' %></th>
       <th><%= sort_link @search, 'role', 'Role' %></th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +34,11 @@
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= user.role %></td>
+    <td>
+        <%= link_to 'Show', [:admin, user] %>
+        <%= link_to 'Edit', edit_admin_user_path(user) %>
+        <%= link_to 'Destroy', [:admin, user], :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
   <% end %>
   </tbody>

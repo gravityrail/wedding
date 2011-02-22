@@ -17,6 +17,18 @@ class User < ActiveRecord::Base
     User.new(args.merge(:password=>password, :password_confirmation=>password))
   end
   
+  def admin?
+    return (self.role == 'admin')
+  end
+  
+  def name
+    if(!first_name || !last_name)
+      return email
+    else
+      return first_name + ' ' + last_name
+    end
+  end
+  
 #  def set_unique_key
     #generate out unique reference as the MD5 of the email, we do this for tracking our users
 #    self.unique_key = Digest::MD5.hexdigest('gothttps:' + self.email)

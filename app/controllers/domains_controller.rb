@@ -3,8 +3,10 @@ class DomainsController < ApplicationController
   # GET /domains
   # GET /domains.xml
   def index
-    @domains = Domain.all
-
+    @search = Domain.search(params[:search])
+    @search.meta_sort ||= 'name.asc'
+    @domains = @search.all.paginate :page => params[:page], :per_page => 20
+  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @domains }
@@ -41,6 +43,7 @@ class DomainsController < ApplicationController
   # POST /domains
   # POST /domains.xml
   def create
+    params[:domain][:updated_by] = current_user
     @domain = Domain.new(params[:domain])
 
     respond_to do |format|
@@ -57,6 +60,7 @@ class DomainsController < ApplicationController
   # PUT /domains/1
   # PUT /domains/1.xml
   def update
+    params[:domain][:updated_by] = current_user
     @domain = Domain.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +77,7 @@ class DomainsController < ApplicationController
   # DELETE /domains/1
   # DELETE /domains/1.xml
   def destroy
+    params[:updated_by] = current_user
     @domain = Domain.find(params[:id])
     @domain.destroy
 

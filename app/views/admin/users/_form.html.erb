@@ -1,4 +1,4 @@
-<%= semantic_form_for(@user) do |f| %>
+<%= semantic_form_for([:admin, @user]) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,8 +12,10 @@
   <% end %>
 
   <%= f.inputs do %>
-    <%= f.input :name, :label=>'Site Name' %>
-    <%= f.input :email, :label=>'Site Name' %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :role %>
   <% end %>
 
   <%= f.buttons do %>

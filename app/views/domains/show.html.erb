@@ -8,7 +8,10 @@
   <b>Name:</b>
   <%= @domain.name %>
 </p>
-
+<p>
+  <b>Version:</b>
+  <%= @domain.version %>
+</p>
 <p>
   <b>Uses hsts:</b>
   <%= @domain.uses_hsts %>
@@ -57,3 +60,29 @@
 
 <%= link_to raw('&laquo; Domain List'), domains_path %>
 | <%= link_to 'Edit', edit_domain_path(@domain) %>
+
+<% if can?(:manage, Domain) %>
+<hr />
+<h3>Version History</h3>
+<ul id="versions">
+<% @domain.versions.reverse.each do |version| %>
+  <% if(!version.initial?) %>
+    <li>
+      <b>Version <%= version.number %> </b>
+      <p>Date: <%= version.created_at %></p>
+      <% if(!version.user_id.nil?) %>
+        <% user = User.find(version.user_id) %>
+        <p>User: <%= link_to user.name, [:admin, user] %> </p>
+      <% end %>
+      <p>Changes: 
+        <table class="changes">
+          <% version.modifications.each do |field, change| %>
+            <tr><th><%= field %></th><td><%= change[1] %></td></tr>
+          <% end %>
+        </table>
+      </p>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+<% end %>

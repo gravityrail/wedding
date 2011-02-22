@@ -72,6 +72,32 @@ p.notice {
   margin-right: 40px;
 }
 
+.search {
+  background-color: #77C043;
+  color: white;
+  font-size: 14;
+  font-weight: bold;
+  padding: 10px 10px 0px 10px;
+}
+
+/* versions */
+ul#versions {
+  margin-left: 20px;
+}
+
+ul#versions li {
+  padding: 5px; margin: 5px; border: 1px solid #aaa;
+}
+
+#versions table.changes td, #versions table.changes th { 
+  color:#000; padding:7px 15px; 
+}
+
+#versions table.changes th {
+  font-weight: bold;
+}
+
+
 /* facebook */
 
 #account {
