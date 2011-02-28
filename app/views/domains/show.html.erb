@@ -66,23 +66,7 @@
 <h3>Version History</h3>
 <ul id="versions">
 <% @domain.versions.reverse.each do |version| %>
-  <% if(!version.initial?) %>
-    <li>
-      <b>Version <%= version.number %> </b>
-      <p>Date: <%= version.created_at %></p>
-      <% if(!version.user_id.nil?) %>
-        <% user = User.find(version.user_id) %>
-        <p>User: <%= link_to user.name, [:admin, user] %> </p>
-      <% end %>
-      <p>Changes: 
-        <table class="changes">
-          <% version.modifications.each do |field, change| %>
-            <tr><th><%= field %></th><td><%= change[1] %></td></tr>
-          <% end %>
-        </table>
-      </p>
-    </li>
-  <% end %>
+  <%= render :partial => 'shared/version', :locals => {:version => version} %>
 <% end %>
 </ul>
 <% end %>

@@ -6,6 +6,7 @@ class Ability
     if user.role == 'admin'
       can :manage, User
       can :manage, Domain
+      can :view, 'audit_trail'
     end
   end
 end

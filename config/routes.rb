@@ -14,6 +14,7 @@ Gothttps::Application.routes.draw do
   
   namespace :admin do
     resources :users
+    match '/audit_trail' => 'audit_trail#show'
   end
   
   match "/logout" => "users/omniauth_callbacks#destroy", :as => :signout
