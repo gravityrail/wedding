@@ -1,8 +1,7 @@
 <div id="page">
+<div class="actions"><%= link_to raw('&larr; User List'), admin_users_path %> <%= link_to 'Show', [:admin, @user] %></div>
 <h2>Edit User <%= @user.first_name %> <%= @user.last_name %></h2>
 
 <%= render 'form' %>
 
-<%= link_to raw('&laquo; User List'), admin_users_path %>
-| <%= link_to 'Show', [:admin, @user] %>
 </div>

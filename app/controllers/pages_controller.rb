@@ -7,6 +7,10 @@ class PagesController < ApplicationController
     @msg = "hi!"
   end
   
+  def about
+  
+  end
+  
   def download_users
     render :csv => DownloadUsers.new, :status => :ok
 #    respond_to do |format|

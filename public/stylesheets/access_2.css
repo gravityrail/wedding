@@ -1,3 +1,19 @@
+/** GENERAL **/
+
+p.alert {
+  margin-left: 20px;
+  background-color: #FBB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+p.notice {
+  margin-left: 20px;
+  background-color: #FFB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
 .clear {
   clear: both;
 }
@@ -9,6 +25,12 @@
 .form_right {
   float: left; width: 50%;
 }
+
+.form_right p {
+  padding-left: 10px;
+}
+
+/** PAGE SECTIONS **/
 
 #main {
   padding-top: 10px;
@@ -31,6 +53,8 @@
   background-color: #D3D3D3;
 }
 
+/** FRONT-PAGE "LOGO" AND "ABOUT" BOX **/
+
 #help {
   float: right;
   background-image: url(../images/httpsnow_logo.png);
@@ -44,6 +68,8 @@
   left: 80px;
 }
 
+/** SEARCH **/
+
 #search {
   background-color: #D3D3D3; /*#00AEEF;*/
   color: black;
@@ -56,7 +82,7 @@
   margin-left: 20px;
 }
 
-input.blur { color: #CCC; }
+/** DOMAIN LIST **/
 
 #domains { width: 100%; border-collapse:collapse;}
 #domains h4 { margin:0px; padding:0px;}
@@ -87,7 +113,13 @@ input.blur { color: #CCC; }
   height: 19px;
 }
 
-#domain_form, #page {
+.show_domain h3 {
+  font-size: 16px;
+}
+
+/** PAGE **/
+
+#page {
   background-color: #D3D3D3;
   padding: 10px 50px;
 }
@@ -97,11 +129,29 @@ input.blur { color: #CCC; }
   color: white;
   font-size: 20px;
   padding: 10px 20px;
+  clear: both;
 }
 
 #page h2 {
   margin-bottom: 20px;
 }
+
+#page .actions {
+
+}
+
+#page .actions a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #888;
+}
+
+/** FOOTER **/
 
 #footer_title h2 {
   float: left;
@@ -117,21 +167,37 @@ input.blur { color: #CCC; }
 }
 
 .footer_column {
-  width: 20%;
-  padding: 10px;
+  width: 33%;
   float: left;
 }
 
-#domain_form h2 {
-  background-color: black;
+.footer_column .inner {
+  padding: 10px 0px 15px 20px;
+}
+
+#footer_bottom {
+  margin-top: 5px;
+  background-color: #252525;
+}
+
+#footer_logos {
+  float: left;
+  padding: 20px 20px 30px 20px;
+}
+
+#footer_logos img {
+  margin-right: 20px;
+}
+
+#footer_links {
+  float: right;
+  padding: 25px 20px 30px 20px;
   color: white;
-  font-size: 20px;
-  margin-bottom: 20px;
-  padding: 10px 20px 10px 50px;
-  background-image: url(../images/add_site_button.png);
-  background-repeat: no-repeat;
-  background-position: 15px 10px;
-  
+}
+
+#footer_links a {
+  text-decoration: none;
+  color: white;
 }
 
 a.bigbutton {
@@ -147,6 +213,8 @@ a.bigbutton {
   display: block;
   text-decoration: none;  
 }
+
+/** MISC **/
 
 #project_info {
   float: right;
@@ -167,25 +235,12 @@ a.bigbutton {
   border-radius: 10px;
 }
 
-p.alert {
-  margin-left: 20px;
-  background-color: #FBB;
-  padding: 10px;
-  margin-right: 40px;
-}
-
-p.notice {
-  margin-left: 20px;
-  background-color: #FFB;
-  padding: 10px;
-  margin-right: 40px;
-}
-
 
 
 /* versions */
 ul#versions {
-  margin-left: 20px;
+  list-style-type: none;
+  margin: 0; padding: 0;
 }
 
 ul#versions li {
@@ -215,11 +270,8 @@ ul#account li {
   padding: 0;
 }
 
-ul#account li.facebook {
+ul#account li.facebook, ul#account li.user {
   padding-top: 5px;
-}
-
-ul#account li.button {
 }
 
 ul#account li.button a {

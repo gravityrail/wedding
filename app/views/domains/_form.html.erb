@@ -14,14 +14,14 @@
 
   <%= f.inputs :https do %>
     <%= f.input :name, :label=>'Site Name' %>
-    <%= f.input :uses_hsts, :label=>'Uses HSTS?', :hint=>'HTTP Strict Transport Security' %>
-    <%= f.input :uses_https, :label=>'Uses HTTPS?' %>
-    <%= f.input :mixed_content, :label=>'Mixed Content?' %>
-    <%= f.input :all_https, :label=>'All HTTPS?' %>
-    <%= f.input :all_identifying, :label=>'All Identifying?' %>
-    <%= f.input :secure_cookies, :label=>'Uses Secure Cookies?' %>
-    <%= f.input :ssl_valid, :label=>'Valid SSL Certificate?' %>
-    <%= f.input :key_strength, :label=>'Key Strength' %>
+    <%= f.input :uses_hsts, :label=>'Uses HSTS?', :hint=>'Does the website use HSTS? (HTTP Strict Transport Security)' %>
+    <%= f.input :uses_https, :label=>'Uses HTTPS?', :hint=>'Does the website use HTTPS?' %>
+    <%= f.input :mixed_content, :label=>'Mixed Content?', :hint=>'Is the website free of mixed content?' %>
+    <%= f.input :all_https, :label=>'All HTTPS?', :hint=>'Is HTTPS in use for all pages on the entire site?' %>
+    <%= f.input :all_identifying, :label=>'All Identifying?', :hint=>'Is HTTPS in use on all pages where a user enters personally identifying information?' %>
+    <%= f.input :secure_cookies, :label=>'Uses Secure Cookies?', :hint=>'Does the website use secure cookies?' %>
+    <%= f.input :ssl_valid, :label=>'Valid SSL Certificate?', :hint=>'Is the SSL certificate valid?' %>
+    <%= f.input :key_strength, :label=>'Key Strength', :hint=>'What is the key strength?' %>
     <%= f.input :notes, :label=>'Notes' %>
   <% end %>
 
@@ -33,5 +33,5 @@
 
 <div class="form_right">
   <h2>Help</h2>
-  <p>Help content goes here</p>
+  <p>Help content coming soon</p>
 </div>

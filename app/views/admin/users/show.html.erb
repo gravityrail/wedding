@@ -1,4 +1,5 @@
 <div id="page">
+<div class="actions"><%= link_to raw('&larr; User List'), admin_users_path %> <%= link_to 'Edit', edit_admin_user_path(@user) %></div>
 <h2>User Summary</h2>
 
 <p id="notice"><%= notice %></p>
@@ -18,6 +19,4 @@
   <%= @user.created_at %>
 </p>
 
-<%= link_to raw('&laquo; User List'), admin_users_path %>
-| <%= link_to 'Edit', edit_admin_user_path(@user) %>
 </div>
