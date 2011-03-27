@@ -87,9 +87,39 @@ input.blur { color: #CCC; }
   height: 19px;
 }
 
-#domain_form {
+#domain_form, #page {
   background-color: #D3D3D3;
   padding: 10px 50px;
+}
+
+#page h2, #footer_title h2 {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+#page h2 {
+  margin-bottom: 20px;
+}
+
+#footer_title h2 {
+  float: left;
+}
+
+#footer_title {
+  margin-top: 50px;
+}
+
+#footer_content {
+  padding-top: 10px;
+  background-color: #D3D3D3;
+}
+
+.footer_column {
+  width: 20%;
+  padding: 10px;
+  float: left;
 }
 
 #domain_form h2 {

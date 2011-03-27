@@ -1,7 +1,8 @@
-<%= content_for :title do %>
+<div id="page">
 <h2>Edit User <%= @user.first_name %> <%= @user.last_name %></h2>
-<% end %>
+
 <%= render 'form' %>
 
 <%= link_to raw('&laquo; User List'), admin_users_path %>
 | <%= link_to 'Show', [:admin, @user] %>
+</div>

@@ -1,6 +1,5 @@
-<%= content_for :title do %>
+<div id="page">
 <h2>User Summary</h2>
-<% end %>
 
 <p id="notice"><%= notice %></p>
 
@@ -21,3 +20,4 @@
 
 <%= link_to raw('&laquo; User List'), admin_users_path %>
 | <%= link_to 'Edit', edit_admin_user_path(@user) %>
+</div>
