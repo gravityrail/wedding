@@ -1,3 +1,4 @@
+<div class="form_left">
 <%= semantic_form_for(@domain) do |f| %>
   <% if @domain.errors.any? %>
     <div id="error_explanation">
@@ -28,3 +29,8 @@
     <%= f.commit_button %>
   <% end %>
 <% end %>
+</div>
+
+<div class="form_right">
+  <h2>Help</h2>
+</div>

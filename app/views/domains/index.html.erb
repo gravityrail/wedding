@@ -1,22 +1,23 @@
-<%= content_for :title do %>
-<h2>Got HTTPS?</h2>
+<%= content_for :header do %>
+<div id="help">
+  <a href="/">How does our website work?</a>
+  <div class="logo"></div>
+</div>
+<div id="search">
+  <% form_for @search do |f| %>
+    <%= f.text_field :name_contains, :title => 'Search for a website' %><%= f.submit "Search" %> <span class="hint">Enter any website URL address</span>
+    <!--<%= @search.count %> Results-->
+  <% end %>
+</div>
 <% end %>
 
-<p id="project_info">
-  A joint project of the <a href="http://eff.org">EFF</a> and <a href="http://accessnow.org">Access</a>.
-</p>
   <p>
   <%= link_to 'Click here to add a domain', new_domain_path, :class=>'bigbutton' %>
   </p>
   <div class="bubblecontainer">
     <%= render :partial=>'shared/help' %>
   </div>
-  <div class="search">
-    <% form_for @search do |f| %>
-      Search: <%= f.text_field :name_contains %><%= f.submit "Search" %><br />
-      <%= @search.count %> Results
-    <% end %>
-  </div>
+  
   <table id="domains">
     <tr>
       <th>Name</th>

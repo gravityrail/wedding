@@ -1,0 +1,247 @@
+.clear {
+  clear: both;
+}
+
+.form_left {
+  float: left; width: 50%;
+}
+
+.form_right {
+  float: left; width: 50%;
+}
+
+#main {
+  padding-top: 10px;
+}
+
+#header {
+  font-size: larger;
+  font-weight: bold;
+  color: black;
+  padding-top: 5px;
+}
+
+#content {
+  width: 960px;
+  font-size: 120%;
+}
+
+#logo {
+  padding: 20px 50px;
+  background-color: #D3D3D3;
+}
+
+#help {
+  float: right;
+  background-image: url(../images/httpsnow_logo.png);
+  width: 311px;
+  height: 106px;
+}
+
+#help a {
+  position: relative;
+  top: 10px;
+  left: 80px;
+}
+
+#search {
+  background-color: #D3D3D3; /*#00AEEF;*/
+  color: black;
+  font-size: 14;
+  padding: 10px 50px;
+  border-top: 1px solid #AAA;
+}
+
+#search .hint {
+  margin-left: 20px;
+}
+
+input.blur { color: #CCC; }
+
+#domains { width: 100%; border-collapse:collapse;}
+#domains h4 { margin:0px; padding:0px;}
+#domains ul { margin:10px 0 10px 40px; padding:0px;}
+#domains th { font-weight: normal; background:#00AEEF repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left; font-size: 90%;}
+#domains th a {color: white;}
+#domains td { color:#000; padding:7px 15px; }
+#domains tr { background-color:#D3D3D3; }
+#domains tr.summary { margin-top: 5px; }
+#domains tr.summary:hover {background-color:#E3E3E3;}
+#domains tr.odd td { background:#fff repeat-x scroll center left; cursor:pointer; }
+#domains div.arrow { background:transparent url(/images/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+#domains div.up { background-position:0px 0px;}
+
+#domains .tick {
+  text-indent: -4000px;
+  display: block;
+  background-image: url(/images/tick.png);
+  width: 19px;
+  height: 19px;
+}
+
+#domains .cross {
+  text-indent: -4000px;
+  display: block;
+  background-image: url(/images/cross.png);
+  width: 19px;
+  height: 19px;
+}
+
+#domain_form {
+  background-color: #D3D3D3;
+  padding: 10px 50px;
+}
+
+#domain_form h2 {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px 10px 50px;
+  background-image: url(../images/add_site_button.png);
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+  
+}
+
+a.bigbutton {
+  background-color: #000;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px 10px 50px;
+  background-image: url(../images/add_site_button.png);
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+  float: left;
+  display: block;
+  text-decoration: none;  
+}
+
+#project_info {
+  float: right;
+  margin-right: 100px;
+  font-size: larger;
+  padding-top: 10px;
+}
+
+.bubble {
+  border: 1px solid black;
+  background: #ccc;
+  padding: 10px;
+  position: fixed;
+  top:  265px;
+  left: 400px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+p.alert {
+  margin-left: 20px;
+  background-color: #FBB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+p.notice {
+  margin-left: 20px;
+  background-color: #FFB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+
+
+/* versions */
+ul#versions {
+  margin-left: 20px;
+}
+
+ul#versions li {
+  padding: 5px; margin: 5px; border: 1px solid #aaa;
+}
+
+#versions table.changes td, #versions table.changes th { 
+  color:#000; padding:7px 15px; 
+}
+
+#versions table.changes th {
+  font-weight: bold;
+}
+
+
+/* facebook */
+ul#account {
+  float: right;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul#account li {
+  float: left; 
+  list-style-type: none;
+  margin: 0px 0px 0px 5px;
+  padding: 0;
+}
+
+ul#account li.facebook {
+  padding-top: 5px;
+}
+
+ul#account li.button {
+}
+
+ul#account li.button a {
+  display: block;
+  background-color: black;
+  background-image: url(../images/login_button.png);
+  background-repeat: no-repeat;
+  background-position: 15px 7px;
+  padding: 7px 15px 7px 45px;
+  text-decoration: none;
+  font-size: larger;
+  color: white;
+}
+
+ul#account li.admin a {
+  display: block;
+  background-color: black;
+  padding: 7px 5px;
+  text-decoration: none;
+  font-size: larger;
+  color: white;
+}
+
+/*#account {
+  display: inline;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}*/
+
+#account a:hover {
+  color: white;
+}
+
+.login-button {
+  background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) no-repeat scroll left -188px #29447E;
+  display: inline-block;
+  line-height: 14px;
+  outline: medium none;
+  padding: 0 0 0 1px;
+}
+
+.login-button span {
+  background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) repeat scroll 0 0 #5F78AB;
+  border-bottom: 1px solid #1A356E;
+  border-top: 1px solid #879AC0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 1px 1px 0 21px;
+  padding: 2px 6px 3px;
+}

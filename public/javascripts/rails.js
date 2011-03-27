@@ -106,7 +106,7 @@
 		var link = $(this);
 		if (!allowAction(link)) return false;
 
-		if (link.attr('data-remote') != undefined) {
+		if (link.attr('data-remote')) {
 			handleRemote(link);
 			return false;
 		} else if (link.attr('data-method')) {
@@ -116,13 +116,13 @@
 	});
 
 	$('form').live('submit.rails', function(e) {
-		var form = $(this), remote = form.attr('data-remote') != undefined;
+		var form = $(this);
 		if (!allowAction(form)) return false;
 
-		// skip other logic when required values are missing
-		if (requiredValuesMissing(form)) return !remote;
+		// skip other logic when required values are missing, but don't cancel the event
+		if (requiredValuesMissing(form)) return;
 
-		if (remote) {
+		if (form.attr('data-remote')) {
 			handleRemote(form);
 			return false;
 		} else {

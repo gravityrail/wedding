@@ -1,7 +1,9 @@
-<%= content_for :title do %>
+<div id="domain_form">
 <h2>Edit Domain <%= @domain.name %></h2>
-<% end %>
-<%= render 'form' %>
 
-<%= link_to raw('&laquo; Domain List'), domains_path %>
-| <%= link_to 'Show', @domain %>
+<div><%= link_to raw('&laquo; Domain List'), domains_path %>
+| <%= link_to 'Show', @domain %></div>
+
+<%= render 'form' %>
+<div class="clear"></div>
+</div>

@@ -1,6 +1,8 @@
 
 jQuery(document).ready(function() 
 {
+  jQuery("#search_name_contains").watermark('watermark');
+  
   //alert($('#domains tr:odd'));
   jQuery('tr.detail').hide();
   //$('#domains tr:first-child').show();
@@ -21,7 +23,7 @@ jQuery(document).ready(function()
   jQuery('.bubble').hide();
   
   jQuery('.bubblehelp')
-    .append('<img src="/images/help-icon.png"/>')
+    .prepend('<img src="/images/help.png"/><br />')
     .click(function(e){
     
     var element = jQuery(this);

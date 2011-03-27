@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  layout 'access'
+  layout 'access_2'
   before_filter :ssl_redirect
 
   USERNAME, PASSWORD = "accessnow", "b33pb33p" #md5 of 'purpose36'

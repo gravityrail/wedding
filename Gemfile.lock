@@ -27,15 +27,6 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
-  remote: git://github.com/maca/warden-facebook.git
-  revision: 54d0a2f194772b6e92bfa20519537f94384c638b
-  specs:
-    warden-facebook (0.1.3)
-      json
-      oauth2
-      warden
-
-GIT
   remote: git://github.com/plataformatec/devise.git
   revision: f964ea526bd31a69ab1543a636976d382cee7299
   specs:
@@ -43,6 +34,15 @@ GIT
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
+
+GIT
+  remote: git@github.com:gravityrail/warden-facebook.git
+  revision: 4e9e0a84aad6decf1d9bd5811ee1871411b95f74
+  specs:
+    warden-facebook (0.1.3)
+      json
+      oauth2
+      warden
 
 GEM
   remote: http://rubygems.org/
