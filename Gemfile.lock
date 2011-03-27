@@ -36,8 +36,8 @@ GIT
       warden (~> 1.0.3)
 
 GIT
-  remote: git@github.com:gravityrail/warden-facebook.git
-  revision: 4e9e0a84aad6decf1d9bd5811ee1871411b95f74
+  remote: https://github.com/gravityrail/warden-facebook.git
+  revision: 2156c25d835f36e1232ab35fc85c21401eeb7c2d
   specs:
     warden-facebook (0.1.3)
       json
