@@ -16,7 +16,7 @@ jQuery(document).ready(function()
   jQuery('.bubblehelp').each(function(e){
     var element = jQuery(this);
     var help_id = element.attr('id')+'_info';
-    var popup = jQuery('#'+help_id)
+    var popup = jQuery('#'+help_id);
     popup.addClass('bubble');
   });
   
@@ -30,10 +30,25 @@ jQuery(document).ready(function()
     var help_id = element.attr('id')+'_info';
     var popup = jQuery('#'+help_id);
     
+    element.overlay({
+      target: popup,
+      mask: { 
+        color: '#000',
+        loadSpeed: 200,
+    		opacity: 0.9
+      },
+      closeOnClick: true,
+      load: true
+      
+    });
+    
+    
+    
+    
     //hide other bubbles
 //    jQuery('.bubble').hide();
     
-    popup.slideToggle();
+/*    popup.slideToggle();
     
     var popup_height = popup.height();
     
@@ -45,7 +60,7 @@ jQuery(document).ready(function()
     
     popup.click(function(e){
       jQuery(this).hide();
-    });
+    });*/
   });
 });
 

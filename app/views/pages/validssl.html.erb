@@ -1,0 +1,11 @@
+<h1>Is the SSL certificate valid?</h1>
+
+<h2>What it is:</h2>
+<p>Sites that use HTTPS present a cryptographic certificate to your browser whenever you access them. It shows that your connection to the site is not being tampered with. The certificate process is important because tampering and eavesdropping may not be otherwise apparent. For this process work correctly, all sites should present a current, valid certificate from a mainstream certificate issuer, and that certificate should correctly refer to the actual site name through which the site is being accessed. If the site presents a certificate that's expired, invalid, unrecognized by mainstream browsers, doesn't refer to the name through which the site is accessed, etc., browsers can't be sure that the connection is really secure. Using a valid certificate is GOOD.</p>
+
+<h2>How to tell:</h2>
+<p>When you first access a site, make sure it is using HTTPS. If the site is using HTTPS and the certificate is valid, you won't see any warning or error messages. If you do see a warning or error message of any kind related to the site's certificate or identity, there is a problem. In that case, you should conclude that the site's certificate is NOT valid, regardless of the exact nature of the error or warning message. Note, warnings also appear when there is mixed content on a page, which has nothing to do with the validity of the certificate.</p>
+
+<img src="/doc/images/validssl.png" alt="Untrusted certificate in Firefox"/>
+
+<p>NOTE: Our organizations believe that the existing certification process is flawed and should be supplemented or replaced over time with a more secure and transparent system. However, using the existing system properly today is an important way for a site to protect its users.</p>

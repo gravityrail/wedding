@@ -1,0 +1,21 @@
+<h1>Does the website use secure cookies?</h1>
+
+<h2>What it is:</h2>
+<p>For sites that require users to log in, the site may set a cookie in your browser containing authentication information that helps the site recognize that requests from your browser are allowed to access information in your account.</p>
+
+<p>If the site uses HTTPS, the correct security practice is to mark these cookies "secure", which prevents them from being sent to a non-HTTPS page, even at the same URL. If the cookies are not "secure," an attacker can trick your browser into going to a fake non-HTTPS page; when your browser sends the cookies, the eavesdropper can record them and then use them to log into your account. Using secure cookies is GOOD. Sites should do this. (hypertext)</p>
+
+<h2>How to tell:</h2>
+<p>In Firefox, go to Firefox / Preferences (or Ctrl-,)/ Privacy / Remove individual cookies.  Scroll down to the name of the site you're visiting in the cookie list, and click on the name of the site to see a list of cookies that the site has set in your browser.  Click on each of these cookies. At the bottom of the panel, Firefox shows whether the cookie is secure. If the cookie is secure, the text reads:</p>
+
+<p>"Send for: Encrypted connections only"</p>
+
+<img src="/doc/images/securecookies1.png" alt="Send for: Encrypted connections only"/>
+
+<p>If the cookie is not secure, the text reads:</p>
+
+<p>"Send for: Any type of connection"</p>
+
+<img src="/doc/images/securecookies2.png" alt="Send for: Any type of connection"/>
+
+<p>If a site that uses HTTPS has sent you any insecure cookies, you can conclude that the site does not use secure cookies. This is most relevant on sites that you have an account or identity on, but in some cases it might be important to have anonymous cookies marked secure as well.</p>

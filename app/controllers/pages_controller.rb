@@ -11,6 +11,38 @@ class PagesController < ApplicationController
   
   end
   
+  def https
+    render :layout => 'help'
+  end
+  
+  def hsts
+    render :layout => 'help'
+  end
+  
+  def mixed
+    render :layout => 'help'
+  end
+  
+  def allhttps
+    render :layout => 'help'
+  end
+  
+  def ident
+    render :layout => 'help'
+  end
+  
+  def securecookies
+    render :layout => 'help'
+  end
+  
+  def validssl
+    render :layout => 'help'
+  end
+  
+  def keystrength
+    render :layout => 'help'
+  end
+  
   def download_users
     render :csv => DownloadUsers.new, :status => :ok
 #    respond_to do |format|

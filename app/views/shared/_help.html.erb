@@ -1,31 +1,69 @@
-<div id="hsts_info">
-  Does the website use HSTS? (HTTP Strict Transport Security)
+<div class="overlay" id="hsts_info">
+  <h3>Does the website use HSTS? (HTTP Strict Transport Security)</h3>
+  <div class="main">
+    <p>HSTS (HTTPS Strict Transport Security) is a new standard by which a web site can request that users automatically always use HTTPS when communicating with that site. The users' browsers will remember this request and automatically turn on HTTPS when connecting to the site in the future, even if the user didn't specifically ask for it. Using HSTS is GOOD.  Sites should do this.</p>
+  </div>
+  <%= link_to 'How to tell', help_hsts_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="https_info">
-  Does the website use HTTPS?
+<div class="overlay" id="https_info">
+  <h3>Does the website use HTTPS?</h3>
+  <div class="main">
+    <p>HTTPS (HTTP Secure) is the secure version of the web's HTTP protocol. When sites use HTTPS, users' requests to the site, as well as the site's replies, are encrypted. This makes it harder for eavesdroppers to know what a user is doing on the site, including what the user is reading or writing or which parts of the site the user is communicating with. Using HTTPS is GOOD. Sites should do this. (hypertext) How to tell.</p>
+  </div>
+  <%= link_to 'How to tell', help_https_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="mixed_info">
-  Is the website free of mixed content?
+<div class="overlay" id="mixed_info">
+  <h3>Is the website free of mixed content?</h3>
+  <div class="main">
+    <p>Mixed content is a problem that occurs when a site is using HTTPS for a page as a whole, but some elements on that page, such as an image, are not encrypted with HTTPS. This can let someone eavesdrop on or tamper with that part of the page. For instance, if a news or encyclopedia site doesn't encrypt images, an eavesdropper could see what images are loaded and potentially deduce which news or encyclopedia articles you're reading. If a webmail site doesn't encrypt its Javascript (or parts of the page that can load Javascript), an eavesdropper could tamper with the site's Javascript code and reprogram it to leak unencrypted copies of your e-mail.</p>
+
+    <p>Sites that have mixed content are also potentially vulnerable to attack software like Firesheep. This vulnerability may exist even if a particular attack program doesn't appear to work against a particular web site with some minor technical changes. Having pages free of mixed content is GOOD. Sites should do this.</p>
+  </div>
+  <%= link_to 'How to tell', help_mixed_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="allhttps_info">
-  Is HTTPS in use for all pages on the entire site?
+<div class="overlay" id="allhttps_info">
+  <h3>Is HTTPS in use for all pages on the entire site?</h3>
+  <div class="main">
+    <p>
+      A site can provide the best protection for its users by using HTTPS on all parts and elements of the site, without exception. Among other benefits, this makes it harder for an eavesdropper to gather clues about how a user is using a site, such as which parts of the site they are using. It also prevents attackers from corrupting or altering information presented on the site in ways that could confuse or mislead users, or draw them away from the real site to counterfeit versions. Using HTTPS on all pages is GOOD.  Sites should do this.
+    </p>
+  </div>
+  <%= link_to 'How to tell', help_allhttps_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="ident_info">
-  Is HTTPS in use on all pages where a user enters personally identifying information?
+<div class="overlay" id="ident_info">
+  <h3>Is HTTPS in use on all pages where a user enters personally identifying information?</h3>
+  <div class="main">
+    <p>Some sites use HTTPS for some pages but not for others (e.g. login and payment pages are encrypted, but browsing is not). This means that the level of protection provided by those sites is inconsistent and leaves you vulnerable to attack. Using HTTPS on pages where users enter personal information is GOOD. Sites should do this.</p>
+  </div>
+  <%= link_to 'How to tell', help_ident_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="securecookies_info">
-  Does the website use secure cookies?
+<div class="overlay" id="securecookies_info">
+  <h3>Does the website use secure cookies?</h3>
+  <div class="main">
+    <p>For sites that require users to log in, the site may set a cookie in your browser containing authentication information that helps the site recognize that requests from your browser are allowed to access information in your account.</p>
+
+    <p>If the site uses HTTPS, the correct security practice is to mark these cookies "secure", which prevents them from being sent to a non-HTTPS page, even at the same URL. If the cookies are not "secure," an attacker can trick your browser into going to a fake non-HTTPS page; when your browser sends the cookies, the eavesdropper can record them and then use them to log into your account. Using secure cookies is GOOD. Sites should do this. </p>
+  </div>
+  <%= link_to 'How to tell', help_securecookies_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="validssl_info">
-  Is the SSL certificate valid?
+<div class="overlay" id="validssl_info">
+  <h3>Is the SSL certificate valid?</h3>
+  <div class="main">
+    <p>Sites that use HTTPS present a cryptographic certificate to your browser whenever you access them. It shows that your connection to the site is not being tampered with. The certificate process is important because tampering and eavesdropping may not be otherwise apparent. For this process work correctly, all sites should present a current, valid certificate from a mainstream certificate issuer, and that certificate should correctly refer to the actual site name through which the site is being accessed. If the site presents a certificate that's expired, invalid, unrecognized by mainstream browsers, doesn't refer to the name through which the site is accessed, etc., browsers can't be sure that the connection is really secure. Using a valid certificate is GOOD. Sites should do this.</p>
+  </div>
+  <%= link_to 'How to tell', help_validssl_path, :class => 'more', :target => '_blank' %>
 </div>
 
-<div id="key_info">
-  What is the key strength?
+<div class="overlay" id="keystrength_info">
+  <h3>What is the key strength?</h3>
+  <div class="main">
+    <p>The cryptographic algorithms that sites use to protect information as it travels over the Internet come in various versions and strengths. Using up-to-date and strong versions of these algorithms provides better protection against sophisticated attackers who might be able to break weaker versions, some day, if not now. Although there are several different features of a site's encryption that are potentially relevant, we are choosing to document just one of these: the key length (or strength), which is a numerical measurement of the size (and thus resistant to some attacks) of the site's public encryption key. Using a longer key length is GOOD.  Sites should use the longest key length that is practical for their situation. According to U.S. government security recommendations, sites should now begin using keys with a minimum length of 1024 bits.</p>
+  </div>
+  <%= link_to 'How to tell', help_keystrength_path, :class => 'more', :target => '_blank' %>
 </div>

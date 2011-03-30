@@ -22,6 +22,16 @@ Gothttps::Application.routes.draw do
   match "/download" => "pages#download_users"
   
   match "/about" => "pages#about"
+  
+  #help pages
+  match '/help/https' => 'pages#https'
+  match '/help/hsts' => 'pages#hsts'
+  match '/help/mixed' => 'pages#mixed'
+  match '/help/allhttps' => 'pages#allhttps'
+  match '/help/ident' => 'pages#ident'
+  match '/help/securecookies' => 'pages#securecookies'
+  match '/help/validssl' => 'pages#validssl'
+  match '/help/keystrength' => 'pages#keystrength'
 
   root :to => 'domains#index'
   

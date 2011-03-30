@@ -327,3 +327,95 @@ ul#account li.admin a {
   margin: 1px 1px 0 21px;
   padding: 2px 6px 3px;
 }
+
+/** help pages **/
+body.help h1 {
+  font-size: 18px;
+}
+
+body.help h2 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+body.help h3 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+body.help img {
+  max-width: 800px;
+  margin: 20px 80px;
+  border: 1px solid #999;
+}
+
+/** default tooltip styling **/
+/* tooltip styling */
+.tooltip {
+	display:none;
+	background:url(/images/tooltip/black_arrow_big.png);
+	height:163px;
+	padding:40px 30px 10px 30px;
+	width:310px;
+	font-size:11px;
+	color:#fff;
+}
+
+/* a .label element inside tooltip */
+.tooltip .label {
+	color:yellow;
+	width:35px;
+}
+
+.tooltip a {
+	color:#ad4;
+	font-size:11px;
+	font-weight:bold;
+}
+
+/* the overlayed element */
+.overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	background-color:#FFF;
+	
+	width:400px;	
+	min-height:200px;
+	border:1px solid #666;
+	
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
+}
+
+/* close button positioned on upper right corner */
+.overlay .close {
+	background-image:url(/images/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+.overlay h3 {
+  font-size: 16px;
+}
+
+.overlay p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.overlay a.more {
+  margin-top: 10px;
+  font-size: larger;
+  font-weight: bold;
+}

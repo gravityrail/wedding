@@ -1,0 +1,9 @@
+<h1>What is the key strength?</h1>
+
+<h2>What it is:</h2>
+<p>The cryptographic algorithms that sites use to protect information as it travels over the Internet come in various versions and strengths. Using up-to-date and strong versions of these algorithms provides better protection against sophisticated attackers who might be able to break weaker versions, some day, if not now. Although there are several different features of a site's encryption that are potentially relevant, we are choosing to document just one of these: the key length (or strength), which is a numerical measurement of the size (and thus resistant to some attacks) of the site's public encryption key. Using a longer key length is GOOD. Sites should use the longest key length that is practical for their situation. According to U.S. government security recommendations, sites should now begin using keys with a minimum length of 1024 bits. </p>
+
+<h2>How to tell:</h2>
+<p>You can see the size of the site's public key by viewing the certificate it presents. In Firefox, go to Tools / Page Info / Security / View Certificate / Details. In the Certificate Fields pane, scroll down to "Subject's Public Key" and click on it. In the lower pane, you should see text such as "Modulus (1024 bits):". The number of bits indicated here is the key length.</p>
+
+<img src="/doc/images/keystrength.png" alt="Key strength indication in Firefox"/>
