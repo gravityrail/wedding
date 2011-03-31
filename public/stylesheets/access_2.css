@@ -385,7 +385,8 @@ body.help img {
 	/* styling */
 	background-color:#FFF;
 	
-	width:400px;	
+	width:370px;	
+  padding: 25px;
 	min-height:200px;
 	border:1px solid #666;
 	
@@ -418,4 +419,8 @@ body.help img {
   margin-top: 10px;
   font-size: larger;
   font-weight: bold;
+}
+
+.bubblehelp img {
+  cursor: pointer;
 }

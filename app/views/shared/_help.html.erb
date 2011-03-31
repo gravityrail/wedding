@@ -20,6 +20,8 @@
     <p>Mixed content is a problem that occurs when a site is using HTTPS for a page as a whole, but some elements on that page, such as an image, are not encrypted with HTTPS. This can let someone eavesdrop on or tamper with that part of the page. For instance, if a news or encyclopedia site doesn't encrypt images, an eavesdropper could see what images are loaded and potentially deduce which news or encyclopedia articles you're reading. If a webmail site doesn't encrypt its Javascript (or parts of the page that can load Javascript), an eavesdropper could tamper with the site's Javascript code and reprogram it to leak unencrypted copies of your e-mail.</p>
 
     <p>Sites that have mixed content are also potentially vulnerable to attack software like Firesheep. This vulnerability may exist even if a particular attack program doesn't appear to work against a particular web site with some minor technical changes. Having pages free of mixed content is GOOD. Sites should do this.</p>
+
+    <p>Note: different browsers have different ways of determining whether there is mixed content on a page (i.e., insecure elements on an otherwise secure page), and therefore one browser might fully trust a site while another will give you a warning. So, for example, going to https://www.youtube.com in Chrome triggers a mixed content warning, but visiting this site in Firefox does not. That said, if any browser is giving you a mixed content warning, there’s probably a reason why.</p>
   </div>
   <%= link_to 'How to tell', help_mixed_path, :class => 'more', :target => '_blank' %>
 </div>
@@ -55,7 +57,7 @@
 <div class="overlay" id="validssl_info">
   <h3>Is the SSL certificate valid?</h3>
   <div class="main">
-    <p>Sites that use HTTPS present a cryptographic certificate to your browser whenever you access them. It shows that your connection to the site is not being tampered with. The certificate process is important because tampering and eavesdropping may not be otherwise apparent. For this process work correctly, all sites should present a current, valid certificate from a mainstream certificate issuer, and that certificate should correctly refer to the actual site name through which the site is being accessed. If the site presents a certificate that's expired, invalid, unrecognized by mainstream browsers, doesn't refer to the name through which the site is accessed, etc., browsers can't be sure that the connection is really secure. Using a valid certificate is GOOD. Sites should do this.</p>
+    <p>Sites that use HTTPS present a cryptographic certificate to your browser whenever you access them. It shows that your connection to the site is not being tampered with. The certificate process is important because tampering and eavesdropping may not be otherwise apparent. For this process to work correctly, all sites should present a current, valid certificate from a mainstream certificate issuer, and that certificate should correctly refer to the actual site name through which the site is being accessed. If the site presents a certificate that's expired, invalid, unrecognized by mainstream browsers, doesn't refer to the name through which the site is accessed, etc., browsers can't be sure that the connection is really secure. Using a valid certificate is GOOD. Sites should do this.</p>
   </div>
   <%= link_to 'How to tell', help_validssl_path, :class => 'more', :target => '_blank' %>
 </div>
