@@ -24,14 +24,14 @@ Gothttps::Application.routes.draw do
   match "/about" => "pages#about"
   
   #help pages
-  match '/help/https' => 'pages#https'
-  match '/help/hsts' => 'pages#hsts'
-  match '/help/mixed' => 'pages#mixed'
-  match '/help/allhttps' => 'pages#allhttps'
-  match '/help/ident' => 'pages#ident'
-  match '/help/securecookies' => 'pages#securecookies'
-  match '/help/validssl' => 'pages#validssl'
-  match '/help/keystrength' => 'pages#keystrength'
+  match '/help/https' => 'pages#https', :as => :https
+  match '/help/hsts' => 'pages#hsts', :as => :hsts
+  match '/help/mixed' => 'pages#mixed', :as => :mixed
+  match '/help/allhttps' => 'pages#allhttps', :as => :allhttps
+  match '/help/ident' => 'pages#ident', :as => :ident
+  match '/help/securecookies' => 'pages#securecookies', :as => :securecookies
+  match '/help/validssl' => 'pages#validssl', :as => :validssl
+  match '/help/keystrength' => 'pages#keystrength', :as => :keystrength
 
   root :to => 'domains#index'
   

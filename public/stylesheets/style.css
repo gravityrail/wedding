@@ -166,6 +166,10 @@ button {  width: auto; overflow: visible; }
  * Author: 
  */
 
+body {
+  font-family: helvetica, verdana, ariel, sans-serif;
+}
+
 
 
 

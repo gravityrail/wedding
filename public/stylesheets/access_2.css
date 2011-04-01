@@ -1,5 +1,13 @@
 /** GENERAL **/
 
+a {
+  color: #628298;
+}
+
+a:hover {
+  color: #00AEEC;
+}
+
 p.alert {
   margin-left: 20px;
   background-color: #FBB;
@@ -19,11 +27,11 @@ p.notice {
 }
 
 .form_left {
-  float: left; width: 50%;
+  float: left; width: 48%;
 }
 
 .form_right {
-  float: left; width: 50%;
+  float: right; width: 48%;
 }
 
 .form_right p {
@@ -423,4 +431,12 @@ body.help img {
 
 .bubblehelp img {
   cursor: pointer;
+}
+
+/* Extra styling on form helpers */
+
+.form_right a.help_link {
+  display: block;
+  padding: 10px 10px 30px 25px;
+  font-size: 1.1em;
 }
