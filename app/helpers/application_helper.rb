@@ -4,7 +4,7 @@ module ApplicationHelper
       "<span class='tick'>yes</span>"
     elsif(value == 0)
       "<span class='cross'>no</span>"
-    else
+    elsif(value == 2)
       "<span class='na'>not applicable</span>"
     end
   end
@@ -14,7 +14,7 @@ module ApplicationHelper
       "<span class='cross'>yes</span>"
     elsif(value == 0)
       "<span class='tick'>no</span>"
-    else
+    elsif(value == 2)
       "<span class='na'>not applicable</span>"
     end
   end
@@ -24,7 +24,7 @@ module ApplicationHelper
      "Yes"
     elsif(value == 0)
       "No"
-    else
+    elsif(value == 2)
       "Not Applicable"
     end
   end
