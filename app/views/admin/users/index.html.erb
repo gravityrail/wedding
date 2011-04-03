@@ -11,7 +11,7 @@
   <%-# f.text_field :title_like, :size => 15 %>
   <%= f.submit "Search" %>
   <%= link_to "Clear", '#', :onclick=>"$(this).parent.parent.reset(); return false;" %>
-  <p><%= @search.count %> Matches</p>
+  <p class="user_results"><%= @search.count %> Matches</p>
 <% end %>
 
 

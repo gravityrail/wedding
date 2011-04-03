@@ -452,3 +452,7 @@ body.help #body {
   padding: 10px 10px 30px 25px;
   font-size: 1.1em;
 }
+
+form.formtastic p.user_results {
+  padding-top: 30px;
+}
