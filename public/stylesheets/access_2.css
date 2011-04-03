@@ -125,6 +125,14 @@ p.notice {
   height: 19px;
 }
 
+#domains .na {
+  text-indent: -4000px;
+  display: block;
+  background-image: url(/images/na.png);
+  width: 19px;
+  height: 19px;
+}
+
 .show_domain h3 {
   font-size: 16px;
 }
