@@ -10,21 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218023919) do
+ActiveRecord::Schema.define(:version => 20110403183542) do
 
   create_table "domains", :force => true do |t|
     t.string   "name"
-    t.boolean  "uses_hsts"
-    t.boolean  "uses_https"
-    t.boolean  "mixed_content"
-    t.boolean  "all_https"
-    t.boolean  "all_identifying"
-    t.boolean  "secure_cookies"
-    t.boolean  "ssl_valid"
     t.string   "key_strength"
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "uses_hsts"
+    t.integer  "uses_https"
+    t.integer  "mixed_content"
+    t.integer  "all_https"
+    t.integer  "all_identifying"
+    t.integer  "secure_cookies"
+    t.integer  "ssl_valid"
   end
 
   create_table "users", :force => true do |t|
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20110218023919) do
     t.datetime "updated_at"
     t.boolean  "opt_in",                              :default => true,   :null => false
     t.string   "role",                                :default => "user"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
