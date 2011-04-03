@@ -10,37 +10,37 @@
   </p>
   <p>
     <b>Uses hsts:</b>
-    <%= @domain.uses_hsts %>
+    <%= dom_show @domain.uses_hsts %>
   </p>
   
   <p>
     <b>Uses https:</b>
-    <%= @domain.uses_https %>
+    <%= dom_show @domain.uses_https %>
   </p>
   
   <p>
     <b>Mixed content:</b>
-    <%= @domain.mixed_content %>
+    <%= dom_show @domain.mixed_content %>
   </p>
   
   <p>
     <b>All https:</b>
-    <%= @domain.all_https %>
+    <%= dom_show @domain.all_https %>
   </p>
   
   <p>
     <b>All identifying:</b>
-    <%= @domain.all_identifying %>
+    <%= dom_show @domain.all_identifying %>
   </p>
   
   <p>
     <b>Secure cookies:</b>
-    <%= @domain.secure_cookies %>
+    <%= dom_show @domain.secure_cookies %>
   </p>
   
   <p>
     <b>Ssl valid:</b>
-    <%= @domain.ssl_valid %>
+    <%= dom_show @domain.ssl_valid %>
   </p>
   
   <p>

@@ -1,5 +1,9 @@
 /** GENERAL **/
 
+body {
+  font-family: Helvetica, Verdana, Ariel, sans-serif;
+}
+
 a {
   color: #628298;
 }
@@ -188,6 +192,10 @@ p.notice {
   background-color: #252525;
 }
 
+body.help #footer_bottom {
+  margin-top: 45px;
+}
+
 #footer_logos {
   float: left;
   padding: 20px 20px 30px 20px;
@@ -351,10 +359,14 @@ body.help h3 {
   margin-top: 10px;
 }
 
-body.help img {
+body.help #body img {
   max-width: 800px;
   margin: 20px 80px;
   border: 1px solid #999;
+}
+
+body.help #body {
+  margin-top: 40px;
 }
 
 /** default tooltip styling **/

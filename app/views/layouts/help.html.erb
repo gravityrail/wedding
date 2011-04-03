@@ -39,14 +39,41 @@
 <body lang="en" class="help">
   <div id="top_background"></div>
   <div id="container">
+    <div id="main" role="main">
     <header>
+      <div class="row">
+      	<div id="header" class="column grid_5">
+      	 A joint project of the <a href="https://www.eff.org">EFF</a> and <a href="https://www.accessnow.org">Access</a>.
+        </div>
+        <div id="signup" class="column grid_7">
+          <%= render :partial=>'shared/signup' %>
+        </div>
+      </div>
 
     </header>
-    
-    <div id="main" role="main">
+      <div class="row">
+        <div class="column grid_12">
+          <div id="logo">
+            <a href="/"><img src="/images/httpsnow_banner.png" alt="HTTPSNow"/></a>
+          </div>
+          <%= yield(:header) %>
+        </div>
+      </div>
+      
       <div class="row" id="body">
         <div class="column grid_12">
         <%= yield %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column grid_12" id="footer_bottom">
+          <div id="footer_logos">
+            <a href="https://www.accessnow.org"><img src="/images/access_logo_footer.png" alt="Access Now"/></a>
+            <a href="https://www.eff.org"><img src="/images/eff_logo_footer.png" alt="Electronic Frontier Foundation"/></a>
+          </div>
+          <div id="footer_links">
+            <a href="/about">about httpsnow.org</a> | <a href="mailto:info@httpsnow.org">contact us</a>
+          </div>
         </div>
       </div>
     </div>

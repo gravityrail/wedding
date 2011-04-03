@@ -4,7 +4,7 @@
   <div class="logo"></div>
 </div>
 <div id="search">
-  <% form_for @search do |f| %>
+  <%= form_for @search do |f| %>
     <%= f.text_field :name_contains, :title => 'Search for a website' %><%= f.submit "Search" %> <span class="hint">Enter any website URL address</span>
     <!--<%= @search.count %> Results-->
   <% end %>
@@ -23,7 +23,7 @@
       <th>Name</th>
       <th class="bubblehelp" id="hsts">HSTS</th>
       <th class="bubblehelp" id="https">HTTPS</th>
-      <th class="bubblehelp" id="mixed">No Mixed</th>
+      <th class="bubblehelp" id="mixed">No Mixed Content</th>
       <th class="bubblehelp" id="allhttps">All HTTPS</th>
       <th class="bubblehelp" id="ident">All Ident</th>
       <th class="bubblehelp" id="securecookies">Secure Cookies</th>
@@ -37,7 +37,7 @@
       <td><%= domain.name %></td>
       <td><%= raw(tick domain.uses_hsts) %></td>
       <td><%= raw tick domain.uses_https %></td>
-      <td><%= raw tick domain.mixed_content %></td>
+      <td><%= raw tick_mixed domain.mixed_content %></td>
       <td><%= raw tick domain.all_https %></td>
       <td><%= raw tick domain.all_identifying %></td>
       <td><%= raw tick domain.secure_cookies %></td>
