@@ -34,7 +34,7 @@
   
   <% @domains.each do |domain| %>
     <tr class="summary">
-      <td><%= domain.name %></td>
+      <td class="domain_name"><%= domain.name %></td>
       <td><%= raw(tick domain.uses_hsts) %></td>
       <td><%= raw tick domain.uses_https %></td>
       <td><%= raw tick_mixed domain.mixed_content %></td>
@@ -57,6 +57,9 @@
     </tr>
   <% end %>
   </table>
+  <div class="pager">
+    <%= will_paginate @domains %>
+  </div>
   <!--<p>&nbsp;</p>
   <p>
   <a style="padding: 20px 10px;" href="http://eff.org" target="_blank"><img src="/images/eff.gif" alt="EFF Web Site"/></a>

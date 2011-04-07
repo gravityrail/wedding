@@ -5,8 +5,8 @@ class DomainsController < ApplicationController
   def index
     @search = Domain.search(params[:search])
     @search.meta_sort ||= 'name.asc'
-    @domains = @search.all.paginate :page => params[:page], :per_page => 20
-    @domains = @domains.sort_by{ |domain| domain.name }
+    @domains = @search.all
+    @domains = @domains.sort_by{ |domain| domain.name }.paginate :page => params[:page], :per_page => 20
 
     respond_to do |format|
       format.html # index.html.erb
