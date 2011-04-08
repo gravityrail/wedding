@@ -115,6 +115,7 @@ p.notice {
   text-indent: -4000px;
   display: block;
   background-image: url(/images/tick.png);
+  margin-left: 8px;
   width: 19px;
   height: 19px;
 }
@@ -123,6 +124,7 @@ p.notice {
   text-indent: -4000px;
   display: block;
   background-image: url(/images/cross.png);
+  margin-left: 8px;
   width: 19px;
   height: 19px;
 }
@@ -131,6 +133,7 @@ p.notice {
   text-indent: -4000px;
   display: block;
   background-image: url(/images/na.png);
+  margin-left: 8px;
   width: 19px;
   height: 19px;
 }
@@ -460,8 +463,20 @@ body.help #body {
 
 .form_right a.help_link {
   display: block;
-  padding: 10px 10px 30px 25px;
+  padding: 10px 10px 150px 25px;
   font-size: 1.1em;
+}
+
+.form_right a.help_link.all_https {
+  padding-bottom: 145px;
+}
+
+.form_right a.help_link.all_ident {
+  padding-bottom: 135px;
+}
+
+.form_right a.help_link.ssl {
+  padding-bottom: 115px;
 }
 
 form.formtastic p.user_results {
