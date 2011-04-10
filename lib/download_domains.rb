@@ -1,14 +1,17 @@
-class DownloadUsers
+class DownloadDomains
 
   FIELDS = [
-      "id" ,
-      "email",
-      "first_name",
-      "last_name",
-      "opt_in",
-      "created_at",
-      "updated_at",
-      "fb_id"
+      "id",
+      "name",
+      "uses_hsts",
+      "uses_https",
+      "mixed_content",
+      "all_https",
+      "all_identifying",
+      "secure_cookies",
+      "ssl_valid",
+      "key_strength",
+      "notes"
     ]
 
   # additionally you could pass in arguments
@@ -21,7 +24,7 @@ class DownloadUsers
   # this method is used in the CSV Responder
   # you could dynamically produce a filename here
   def to_filename
-    "users.csv"
+    "domains.csv"
   end
   
   # our testing showed that this method is called on 3 separate occasions
@@ -72,11 +75,11 @@ class DownloadUsers
     # do something here, returning the output
     # this method could be called inside of an iterative loop
     # producing calculated results each time it is called
-    users = User.where({}, :order => 'id')
+    domains = Domain.where({}, :order => 'name')
     lines = []
     
-    users.each do |user|
-      data = FIELDS.collect{|item| user.send(item)}
+    domains.each do |domain|
+      data = FIELDS.collect{|item| domain.send(item)}
       lines << FasterCSV.generate_line(data)
     end
     

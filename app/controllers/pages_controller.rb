@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   require 'download_users'
+  require 'download_domains'
 
-  before_filter :authenticate, :only => [:download_users]
+  #before_filter :authenticate, :only => [:download_users]
+  before_filter :authenticate, :only => [:download_domains]
 
   def index
     @msg = "hi!"
@@ -41,6 +43,10 @@ class PagesController < ApplicationController
   
   def keystrength
     render :layout => 'help'
+  end
+
+  def download_domains
+    render :csv => DownloadDomains.new, :status => :ok
   end
   
   def download_users

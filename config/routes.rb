@@ -19,7 +19,7 @@ Gothttps::Application.routes.draw do
   
   match "/logout" => "users/omniauth_callbacks#destroy", :as => :signout
 
-  match "/download" => "pages#download_users"
+  match "/download" => "pages#download_domains"
   
   match "/about" => "pages#about"
   
