@@ -54,7 +54,9 @@ group :development, :test do
   gem "ruby-debug"
 
   gem "rspec-rails"
+  gem 'shoulda'
   gem "shoulda-matchers"
+
   gem 'cucumber-rails'
   gem 'capybara', :git => 'git://github.com/aslakhellesoy/capybara.git'
   gem 'database_cleaner'

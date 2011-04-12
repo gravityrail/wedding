@@ -161,6 +161,11 @@ p.notice {
   margin-bottom: 20px;
 }
 
+#page.about p{
+  font-size: 105%;
+  line-height: 1.5em;
+}
+
 #page .actions {
 
 }
