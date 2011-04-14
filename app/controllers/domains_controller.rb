@@ -3,6 +3,8 @@ class DomainsController < ApplicationController
   # GET /domains
   # GET /domains.xml
   def index
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
+
     @search = Domain.search(params[:search])
     @search.meta_sort ||= 'name.asc'
     @domains = @search.all
@@ -17,6 +19,7 @@ class DomainsController < ApplicationController
   # GET /domains/1
   # GET /domains/1.xml
   def show
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     @domain = Domain.find(params[:id])
 
     respond_to do |format|
@@ -28,6 +31,7 @@ class DomainsController < ApplicationController
   # GET /domains/new
   # GET /domains/new.xml
   def new
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     @domain = Domain.new
 
     respond_to do |format|
@@ -38,6 +42,7 @@ class DomainsController < ApplicationController
 
   # GET /domains/1/edit
   def edit
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     @domain = Domain.find(params[:id])
   end
 

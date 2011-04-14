@@ -10,38 +10,46 @@ class PagesController < ApplicationController
   end
   
   def about
-  
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
   end
   
   def https
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def hsts
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def mixed
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def allhttps
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def ident
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def securecookies
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def validssl
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
   
   def keystrength
+    response.headers['Strict-Transport-Security'] = 'max-age=2628000'
     render :layout => 'help'
   end
 
