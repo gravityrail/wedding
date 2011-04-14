@@ -1,7 +1,7 @@
 <ul id="account">
   <% if(!current_user) %>
     <li class="button"><a href="https://www.accessnow.org/page/s/sign-up-add">Join Access</a><%#= link_to 'Register', {:action=>"new", :controller=>"devise/registrations"} %></li>
-    <li class="button"><a href="https://secure.eff.org/site/Donation2?df_id=1480&1480.donation=form1&s_src=http%3A%2F%2Fwww.eff.org%2Ffront&s_subsrc=donate">Join the EFF</a><%#= link_to 'Login', {:action=>"new", :controller=>"devise/sessions"} %></li>
+    <li class="button"><a href="https://secure.eff.org/site/Donation2?df_id=1480&1480.donation=form1&s_src=http%3A%2F%2Fwww.eff.org%2Ffront&s_subsrc=donate">Join EFF</a><%#= link_to 'Login', {:action=>"new", :controller=>"devise/sessions"} %></li>
   <% else %>
     <li class="user"><%= current_user.first_name.nil? ? current_user.email : current_user.first_name+' '+current_user.last_name %></li>
     <li class="button"><%= link_to 'Account', {:action=>"edit", :controller=>"devise/registrations"} %></li>

@@ -10,10 +10,10 @@
   <% end %>
 </div>
 <% end %>
-
-  <p>
-  <%= link_to 'Click here to add a domain', new_domain_path, :class=>'bigbutton' %>
-  </p>
+  <div class="table_header">
+    <%= link_to 'Click here to add a domain', new_domain_path, :class=>'bigbutton' %>
+    <p class="info">HTTPS Now allows users to contribute information about how websites use HTTPS, such as whether the site uses HTTPS on all pages, serves mixed content, and more.</p>
+  </div>
   <div class="bubblecontainer">
     <%= render :partial=>'shared/help' %>
   </div>
@@ -21,21 +21,20 @@
   <table id="domains">
     <tr>
       <th>Name</th>
-      <th class="bubblehelp" id="hsts">Uses HSTS</th>
-      <th class="bubblehelp" id="https">Uses HTTPS</th>
+      <th class="bubblehelp" id="https">Uses HTTPS on Some Pages</th>
       <th class="bubblehelp" id="mixed">No Mixed Content</th>
-      <th class="bubblehelp" id="allhttps">All Pages HTTPS</th>
-      <th class="bubblehelp" id="ident">All Ident. Info</th>
-      <th class="bubblehelp" id="securecookies">Secure Cookies</th>
-      <th class="bubblehelp" id="validssl">Valid SSL Certificate</th>
-      <th class="bubblehelp" id="keystrength">Key Strength</th>
-      <th>Show</th>
+      <th class="bubblehelp" id="allhttps">All Pages Use HTTPS</th>
+      <th class="bubblehelp" id="ident">All Identifying Info Encrypted</th>
+      <th class="bubblehelp" id="securecookies">Only Uses Secure Cookies</th>
+      <th class="bubblehelp" id="validssl">Has a Valid SSL Certificate</th>
+      <th class="bubblehelp" id="keystrength">Key Size</th>
+      <th class="bubblehelp" id="hsts">Uses HSTS</th>
+      <th>Show Notes/Edit Entry</th>
     </tr>
   
   <% @domains.each do |domain| %>
     <tr class="summary">
       <td class="domain_name"><%= domain.name %></td>
-      <td><%= raw(tick domain.uses_hsts) %></td>
       <td><%= raw tick domain.uses_https %></td>
       <td><%= raw tick_mixed domain.mixed_content %></td>
       <td><%= raw tick domain.all_https %></td>
@@ -43,6 +42,7 @@
       <td><%= raw tick domain.secure_cookies %></td>
       <td><%= raw tick domain.ssl_valid %></td>
       <td><%= domain.key_strength %></td>
+      <td><%= raw(tick domain.uses_hsts) %></td>
       <td><div class="arrow"></div></td>
       
     </tr>
@@ -56,10 +56,23 @@
       </td>
     </tr>
   <% end %>
+    <tr>
+      <th>Name</th>
+      <th class="bubblehelp" id="https">Uses HTTPS on Some Pages</th>
+      <th class="bubblehelp" id="mixed">No Mixed Content</th>
+      <th class="bubblehelp" id="allhttps">All Pages Use HTTPS</th>
+      <th class="bubblehelp" id="ident">All Identifying Info Encrypted</th>
+      <th class="bubblehelp" id="securecookies">Only Uses Secure Cookies</th>
+      <th class="bubblehelp" id="validssl">Has a Valid SSL Certificate</th>
+      <th class="bubblehelp" id="keystrength">Key Size</th>
+      <th class="bubblehelp" id="hsts">Uses HSTS</th>
+      <th>Show Notes/Edit Entry</th>
+    </tr>
   </table>
   <div class="pager">
     <%= will_paginate @domains %>
   </div>
+  <p class="info"> If you don't know what these terms mean, just click on the question mark at the top and bottom of each column.</p>
   <!--<p>&nbsp;</p>
   <p>
   <a style="padding: 20px 10px;" href="http://eff.org" target="_blank"><img src="/images/eff.gif" alt="EFF Web Site"/></a>

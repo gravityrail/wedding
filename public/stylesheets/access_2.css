@@ -80,6 +80,18 @@ p.notice {
   left: 80px;
 }
 
+div.table_header {
+  margin-top: 15px;
+}
+
+p.info {
+  margin-top: 5px;
+  padding-left: 15px;
+  display: block;
+  float: left;
+  width: 510px;
+}
+
 /** SEARCH **/
 
 #search {
@@ -240,6 +252,7 @@ a.bigbutton {
   font-size: 20px;
   font-weight: bold;
   padding: 10px 20px 10px 50px;
+  margin-right: 10px;
   background-image: url(../images/add_site_button.png);
   background-repeat: no-repeat;
   background-position: 15px 10px;
