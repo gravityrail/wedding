@@ -12,7 +12,7 @@
 <% end %>
   <div class="table_header">
     <%= link_to 'Click here to add a domain', new_domain_path, :class=>'bigbutton' %>
-    <p class="info">HTTPS Now allows users to contribute information about how websites use HTTPS, such as whether the site uses HTTPS on all pages, serves mixed content, and more.</p>
+    <p class="info">HTTPS Now allows users to contribute information about how websites use HTTPS, including does the site use HTTPS on all pages, serve mixed content, etc. If you don't know what these terms mean, just click on the question mark at the top of each column. To see more info about a site, click on the arrow in the show column.</p>
   </div>
   <div style="clear: both;"></div>
   <div class="bubblecontainer">
@@ -24,13 +24,13 @@
       <th>Name</th>
       <th class="bubblehelp" id="https">Uses HTTPS on Some Pages</th>
       <th class="bubblehelp" id="mixed">No Mixed Content</th>
-      <th class="bubblehelp" id="allhttps">All Pages Use HTTPS</th>
-      <th class="bubblehelp" id="ident">All Identifying Info Encrypted</th>
+      <th class="bubblehelp" id="allhttps">Uses HTTPS on All Pages</th>
+      <th class="bubblehelp" id="ident">All Identifying Information Encrypted</th>
       <th class="bubblehelp" id="securecookies">Only Uses Secure Cookies</th>
       <th class="bubblehelp" id="validssl">Has a Valid SSL Certificate</th>
       <th class="bubblehelp" id="keystrength">Key Size</th>
       <th class="bubblehelp" id="hsts">Uses HSTS</th>
-      <th>Show Notes/Edit Entry</th>
+      <th>Show Notes/<br>Edit Entry</th>
     </tr>
   
   <% @domains.each do |domain| %>
@@ -61,19 +61,18 @@
       <th>Name</th>
       <th class="bubblehelp" id="https">Uses HTTPS on Some Pages</th>
       <th class="bubblehelp" id="mixed">No Mixed Content</th>
-      <th class="bubblehelp" id="allhttps">All Pages Use HTTPS</th>
-      <th class="bubblehelp" id="ident">All Identifying Info Encrypted</th>
+      <th class="bubblehelp" id="allhttps">Uses HTTPS on All Pages</th>
+      <th class="bubblehelp" id="ident">All Identifying Information Encrypted</th>
       <th class="bubblehelp" id="securecookies">Only Uses Secure Cookies</th>
       <th class="bubblehelp" id="validssl">Has a Valid SSL Certificate</th>
       <th class="bubblehelp" id="keystrength">Key Size</th>
       <th class="bubblehelp" id="hsts">Uses HSTS</th>
-      <th>Show Notes/Edit Entry</th>
+      <th>Show Notes/<br>Edit Entry</th>
     </tr>
   </table>
   <div class="pager">
     <%= will_paginate @domains %>
   </div>
-  <p class="info"> If you don't know what these terms mean, just click on the question mark at the top and bottom of each column.</p>
   <!--<p>&nbsp;</p>
   <p>
   <a style="padding: 20px 10px;" href="http://eff.org" target="_blank"><img src="/images/eff.gif" alt="EFF Web Site"/></a>

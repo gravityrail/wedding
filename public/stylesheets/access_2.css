@@ -12,6 +12,10 @@ a:hover {
   color: #00AEEC;
 }
 
+.pagination a {
+  color: #00AEEC;
+}
+
 p.alert {
   margin-left: 20px;
   background-color: #FBB;
@@ -86,10 +90,11 @@ div.table_header {
 
 p.info {
   margin-top: 5px;
+  margin-bottom: 5px;
   padding-left: 15px;
   display: block;
   float: left;
-  width: 510px;
+  width: 580px;
 }
 
 /** SEARCH **/
@@ -252,6 +257,7 @@ a.bigbutton {
   font-size: 20px;
   font-weight: bold;
   padding: 10px 20px 10px 50px;
+  margin-top: 30px;
   margin-right: 10px;
   background-image: url(../images/add_site_button.png);
   background-repeat: no-repeat;
@@ -261,6 +267,9 @@ a.bigbutton {
   text-decoration: none;  
 }
 
+a.bigbutton:hover {
+  color: #00AEEC;
+}
 /** MISC **/
 
 #project_info {
