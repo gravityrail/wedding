@@ -66,10 +66,10 @@ group :development, :test do
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
 
-  gem "autotest"
-  gem "autotest-growl"
-  gem "autotest-rails-pure"
-  gem "autotest-fsevent"
+#  gem "autotest"
+#  gem "autotest-growl"
+#  gem "autotest-rails-pure"
+#  gem "autotest-fsevent"
 
   gem "rcov"
 end
