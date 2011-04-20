@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :ssl_redirect
 
   USERNAME, PASSWORD = "accessnow", "b33pb33p" #md5 of 'purpose36'
-  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_user_session_url, :alert => exception.message
   end
