@@ -10,9 +10,9 @@ module ApplicationHelper
   end
 
   def tick_mixed(value)
-    if(value == 1)
+    if(value == 0)
       "<span class='cross'>yes</span>"
-    elsif(value == 0)
+    elsif(value == 1)
       "<span class='tick'>no</span>"
     elsif(value == 2)
       "<span class='na'>not applicable</span>"
