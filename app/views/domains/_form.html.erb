@@ -16,7 +16,7 @@
     <%= f.input :name, :label=>'Site Name' %>
     <%= f.input :uses_hsts, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'Uses HSTS?', :hint=>'Does the website use HSTS? (HTTP Strict Transport Security)' %>
     <%= f.input :uses_https, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'Uses HTTPS?', :hint=>'Does the website use HTTPS?' %>
-    <%= f.input :mixed_content, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'No Mixed Content?', :hint=>'Is the website free of mixed content?' %>
+    <%= f.input :mixed_content, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'Free of Mixed Content?', :hint=>'Is the website free of mixed content?' %>
     <%= f.input :all_https, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'All HTTPS?', :hint=>'Is HTTPS in use for all pages on the entire site?' %>
     <%= f.input :all_identifying, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'All Identifying?', :hint=>'Is HTTPS in use on all pages where a user enters personally identifying information?' %>
     <%= f.input :secure_cookies, :as => :radio, :collection => { "Yes" => 1, "No" => 0, "Not Applicable" => 2 }, :label=>'Uses Secure Cookies?', :hint=>'Does the website use secure cookies?' %>
