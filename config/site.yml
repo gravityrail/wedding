@@ -1,0 +1,10 @@
+development: &default
+  mc_api_key: 'd38505dc6ab60151f260a7085456e0a5-us2'
+  mc_list_id: '9194888d32'
+
+test: &test
+  <<: *default
+
+production:
+  <<: *default
+

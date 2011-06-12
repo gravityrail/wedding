@@ -64,7 +64,6 @@ class DownloadUsers
   private
   
   def generate_header
-
     return FasterCSV.generate_line(FIELDS)
   end
   

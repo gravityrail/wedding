@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.role == 'admin'
       can :manage, User
-      can :manage, Domain
+      can :manage, Event
       can :view, 'audit_trail'
     end
   end

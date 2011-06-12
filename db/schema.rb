@@ -10,21 +10,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403183542) do
+ActiveRecord::Schema.define(:version => 20110612155150) do
 
-  create_table "domains", :force => true do |t|
-    t.string   "name"
-    t.string   "key_strength"
-    t.string   "notes"
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text     "description"
+    t.text     "location"
+    t.float    "lat"
+    t.float    "lon"
+    t.string   "mapurl"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "uses_hsts"
-    t.integer  "uses_https"
-    t.integer  "mixed_content"
-    t.integer  "all_https"
-    t.integer  "all_identifying"
-    t.integer  "secure_cookies"
-    t.integer  "ssl_valid"
+    t.text     "maphtml"
+    t.text     "accommodation"
+    t.text     "presents"
+  end
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.string   "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_histories_on_item_and_table_and_month_and_year"
+
+  create_table "rsvp_guests", :force => true do |t|
+    t.integer "rsvp_id"
+    t.integer "guest_id"
+  end
+
+  create_table "rsvps", :force => true do |t|
+    t.integer  "event_id"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attending",  :default => "unknown"
+    t.string   "greeting"
   end
 
   create_table "users", :force => true do |t|
@@ -43,9 +71,23 @@ ActiveRecord::Schema.define(:version => 20110403183542) do
     t.string   "fb_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "opt_in",                              :default => true,   :null => false
     t.string   "role",                                :default => "user"
-    t.boolean  "admin"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "diet",                                :default => "none"
+    t.boolean  "allergic_nuts",                       :default => false
+    t.boolean  "allergic_wheat",                      :default => false
+    t.text     "notes"
+    t.string   "region"
+    t.string   "country"
+    t.float    "lat"
+    t.float    "lon"
+    t.string   "greeting"
+    t.string   "dance_song"
+    t.string   "romantic_song"
+    t.text     "diet_comments"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

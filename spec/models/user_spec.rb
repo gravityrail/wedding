@@ -4,6 +4,7 @@ describe User do
   pending "add some examples to (or delete) #{__FILE__}"
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -25,5 +26,15 @@ end
 #  created_at           :datetime
 #  updated_at           :datetime
 #  opt_in               :boolean         default(TRUE), not null
+#  role                 :string(255)     default("user")
+#  admin                :boolean
+#  photo_file_name      :string(255)
+#  photo_content_type   :string(255)
+#  photo_file_size      :integer
+#  photo_updated_at     :datetime
+#  diet                 :string(255)     default("none")
+#  allergic_nuts        :boolean         default(FALSE)
+#  allergic_wheat       :boolean         default(FALSE)
+#  notes                :text
 #
 

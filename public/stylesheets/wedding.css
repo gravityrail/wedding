@@ -1,0 +1,260 @@
+/** GENERAL **/
+
+body {
+  font-family: Helvetica, Verdana, Ariel, sans-serif;
+}
+
+a {
+  color: #628298;
+}
+
+a:hover {
+  color: #00AEEC;
+}
+
+p {
+  margin: 10px 0px;
+}
+
+.pagination a {
+  color: #00AEEC;
+}
+
+h1, h2 { font-family: 'Rokkitt', arial, serif; }
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* emboss UI button text */
+.ui-button-text, .ui-button {
+  color: #000;
+  -moz-text-shadow: 0px 1px 0px #FFF;
+	-webkit-text-shadow: 0px 1px 0px #FFF;
+	text-shadow: 0px 1px 0px #FFF;
+
+}
+
+.ui-buttonset .ui-button.ui-state-active {
+  background-color: #FFFFBB;
+  background-image: none;
+}
+
+.ui-buttonset .ui-button.ui-state-active .ui-button-text {
+  color: #228822;
+}
+
+.emboss_red {
+	-moz-text-shadow: 0px -1px 0px #442222;
+	-webkit-text-shadow: 0px -1px 0px #442222;
+	text-shadow: 0px -1px 0px #442222;
+}
+
+.emboss_red {
+	-moz-text-shadow: 0px -1px 0px #000;
+	-webkit-text-shadow: 0px -1px 0px #000;
+	text-shadow: 0px -1px 0px #000;
+}
+
+.shadow {
+	-moz-text-shadow: 1px 1px 2px #000;
+	-webkit-text-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 2px #000;
+}
+
+.toolbar {
+		padding: 8px 4px;
+    margin: 5px 0px;
+    text-align: right;
+}
+
+p.alert {
+  margin-left: 20px;
+  background-color: #FBB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+p.notice {
+  margin-left: 20px;
+  background-color: #FFB;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+.clear {
+  clear: both;
+}
+
+.form_left {
+  float: left; width: 48%;
+}
+
+.form_right {
+  float: right; width: 48%;
+}
+
+.form_right p {
+  padding-left: 10px;
+}
+
+/** PAGE SECTIONS **/
+
+#main {
+  padding-top: 10px;
+}
+
+#header {
+  font-size: larger;
+  font-weight: bold;
+  color: black;
+  padding-top: 5px;
+}
+
+#content {
+  width: 960px;
+  font-size: 120%;
+}
+
+#body .column, #logo {
+  background-color: #910600;
+  color: #FFF;
+}
+
+#main {
+  padding: 10px;
+}
+
+div.table_header {
+  margin-top: 15px;
+}
+
+p.info {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  display: block;
+  float: left;
+  width: 580px;
+}
+
+.login-button {
+  background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) no-repeat scroll left -188px #29447E;
+  display: inline-block;
+  line-height: 14px;
+  outline: medium none;
+  padding: 0 0 0 1px;
+}
+
+.login-button span {
+  background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) repeat scroll 0 0 #5F78AB;
+  border-bottom: 1px solid #1A356E;
+  border-top: 1px solid #879AC0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 1px 1px 0 21px;
+  padding: 2px 6px 3px;
+}
+
+/* the overlayed element */
+.overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	background-color:#FFF;
+	
+	width:370px;	
+  padding: 25px;
+	min-height:200px;
+	border:1px solid #666;
+	
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
+}
+
+/* close button positioned on upper right corner */
+.overlay .close {
+	background-image:url(/images/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+.overlay h3 {
+  font-size: 16px;
+}
+
+.overlay p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.overlay a.more {
+  display: block;
+  margin-top: 15px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.bubblehelp img {
+  cursor: pointer;
+}
+
+div.pager {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  width: 40%;
+  float: right;
+  text-align: right;
+}
+
+div.pager a.prev_page, div.pager a.next_page{
+  color: #fff;
+}
+
+.ui-accordion-header {
+  padding-left: 25px;
+}
+
+.ui-watermark-label {
+  display: none;
+}
+
+#rsvp_container {
+/*  background-color: #FFDDDD; */
+  padding: 10px;
+}
+
+#rsvp_container .fields {
+  border: 1px dashed #FFF;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#rsvp_container .guest {
+}
+
+

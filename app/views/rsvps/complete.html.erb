@@ -1,0 +1,71 @@
+<h1 class="emboss_red">RSVP for <%= @event.title %></h1>
+<p style="font-weight: bold; text-decoration: underline;">Please fill in all details, add any additional guests, and click "Update RSVP"</p>
+<p>
+<%= @event.description %>
+</p>
+<div id="rsvp_container">
+<%= nested_form_for [@event, @rsvp] do |form| %>
+  <h2 class="emboss_red">I am/We are attending:</h2>
+  <div id="attending">
+    <% Rsvp::ATTENDING_ENUM.each do |att| %>
+      <%= form.label "attending_#{att}".to_s, att.capitalize %>
+      <%= form.radio_button :attending, att %>
+    <% end %>
+  </div>
+
+  <%= form.fields_for :guests do |gf| %>
+    <% guest = gf.object %>
+    <% if guest.persisted? %>
+      <h2><%= guest.name %></h2>
+    <% else %>
+      <h2>New Guest</h2>
+    <% end %>
+    <div class="guest">
+      <h3>Basic Information</h3>
+      <div>
+        <%= gf.text_field :first_name, :class => 'watermark', :placeholder => 'First Name' %>
+        <%= gf.text_field :last_name, :class => 'watermark', :placeholder => 'Last Name' %>
+        <%= gf.text_field :email, :class => 'watermark', :placeholder => 'Email Address' %>
+      </div>
+      
+      <h3>Dietary Preferences</h3>
+      <div>
+        <p>Please select your dietary preferences and whether or not you have any allergies</p>
+        <div id="diet_preferences">
+        <% User::DIET_ENUM.each do |diet| %>
+          <%= gf.label "diet_#{diet}".to_s, diet.capitalize %>
+          <%= gf.radio_button :diet, diet %>
+        <% end %>
+        </div>
+        <hr />
+        <h4>Food Allergies</h4>
+        <p>
+        <%= gf.label :allergic_nuts, 'Nuts' %>
+        <%= gf.check_box :allergic_nuts %>
+        <%= gf.label :allergic_wheat, 'Wheat' %>
+        <%= gf.check_box :allergic_wheat %>
+        </p>
+        <p>
+        <%= gf.label :diet_comments%>
+        <%= gf.text_field :diet_comments, :class => 'watermark' %>
+        </p>
+      </div>
+      <h3>Music Selection</h3>
+      <div>
+        <p>We want to play music our guests love! Please specify the artist and song</p>
+        <%= gf.text_field :dance_song, :class => 'watermark', :placeholder => 'Dance Song' %>
+        <%= gf.text_field :romantic_song, :class => 'watermark', :placeholder => 'Romantic Song' %>
+      </div>
+      <%= gf.link_to_remove "Remove Guest", :class => 'button' %>
+    </div>
+  <% end %>
+
+  <p><h2 class="emboss_red">More people attending?</h2> <%= form.link_to_add "Add Another Guest", :guests, :class => 'add-button' %></p>
+  <hr />
+  <h2>Notes/Comments</h2>
+  <%= form.text_area :notes, :cols => 80, :rows => 6 %>
+  <hr />
+  <p><h2 class="emboss_red">All done?</h2> <%= form.submit :class => 'save-button' %></p>
+  
+<% end %>
+</div>

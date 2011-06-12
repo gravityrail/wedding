@@ -1,31 +1,18 @@
 module ApplicationHelper
-  def tick(value)
-    if(value == 1)
-      "<span class='tick'>yes</span>"
-    elsif(value == 0)
-      "<span class='cross'>no</span>"
-    elsif(value == 2)
-      "<span class='na'>not applicable</span>"
+  def remove_link_unless_new_record(fields)
+    unless fields.object.new_record?
+      out = ''
+      out << fields.hidden_field(:_destroy)
+      out << link_to_function("remove", "$(this).parent('.#{fields.object.class.name.underscore}').hide(); $(this).prev().val('1')")
+      raw out
     end
   end
 
-  def tick_mixed(value)
-    if(value == 0)
-      "<span class='cross'>yes</span>"
-    elsif(value == 1)
-      "<span class='tick'>no</span>"
-    elsif(value == 2)
-      "<span class='na'>not applicable</span>"
-    end
-  end
-
-  def dom_show(value)
-    if(value == 1)
-     "Yes"
-    elsif(value == 0)
-      "No"
-    elsif(value == 2)
-      "Not Applicable"
+  def add_guest_link(name, form, opts = {})
+    link_to_function name, opts do |page|
+      guest = render(:partial => 'rsvps/new_guest', :locals => { :form => form, :guest => User.new, :child_index => 1000 })
+      page << %{var new_guest_id = "new_" + new Date().getTime(); $('#guests').append($("#{ escape_javascript guest }".replace(/new_\\d+/g, new_guest_id)));}
+      #I wish this wasn't evil: $('#partners .partner:last-child input').first().focus();
     end
   end
 end

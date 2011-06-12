@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Gothttps::Application.load_tasks
+Wedding::Application.load_tasks

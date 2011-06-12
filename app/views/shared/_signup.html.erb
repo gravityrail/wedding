@@ -1,13 +1,13 @@
-<ul id="account">
+<div id="account" class="toolbar ui-widget-header ui-corner-all">
   <% if(!current_user) %>
-    <li class="button"><a href="https://www.accessnow.org/page/s/sign-up-add">Join Access</a><%#= link_to 'Register', {:action=>"new", :controller=>"devise/registrations"} %></li>
-    <li class="button"><a href="https://www.eff.org/join">Join EFF</a><%#= link_to 'Login', {:action=>"new", :controller=>"devise/sessions"} %></li>
+    <%= link_to 'Register', {:action=>"new", :controller=>"devise/registrations"}, :class => 'button' %>
+    <%= link_to 'Login', {:action=>"new", :controller=>"devise/sessions"}, :class => 'button' %>
   <% else %>
-    <li class="user"><%= current_user.first_name.nil? ? current_user.email : current_user.first_name+' '+current_user.last_name %></li>
-    <li class="button"><%= link_to 'Account', {:action=>"edit", :controller=>"devise/registrations"} %></li>
-    <li class="button"><%= link_to 'Logout', {:action=>"destroy", :controller=>"devise/sessions"} %></li>
+    <%= current_user.first_name.nil? ? current_user.email : current_user.first_name+' '+current_user.last_name %>
+    <%= link_to 'Account', {:action=>"edit", :controller=>"devise/registrations"}, :class => 'account-button' %>
+    <%= link_to 'Logout', {:action=>"destroy", :controller=>"devise/sessions"}, :class => 'logout-button' %>
     <% if(current_user.admin?) %>
-      <li class="admin"><%= link_to 'Admin', admin_users_url %></li>
+      <%= link_to 'Admin', rails_admin_dashboard_url, :class => 'admin-button' %>
     <% end %>
   <% end %>
-</ul>
+</div>

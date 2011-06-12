@@ -1,18 +1,24 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'omniauth'
+gem 'gibbon'
+
+gem 'paperclip', '2.3.11'
+
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
+gem 'omniauth', :git => 'https://github.com/intridea/omniauth.git'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
-gem 'oauth2', :git => 'git://github.com/intridea/oauth2.git'
+#gem 'oauth2', :git => 'git://github.com/intridea/oauth2.git'
 gem 'warden-facebook', :git=>'https://github.com/gravityrail/warden-facebook.git'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "will_paginate"
 gem 'simple-navigation'
-gem 'vestal_versions', :git => 'git://github.com/laserlemon/vestal_versions.git'
+gem 'vestal_versions', '1.0.2' #:git => 'git://github.com/laserlemon/vestal_versions.git'
 gem 'formtastic'
 #gem 'table_builder'
 gem 'ssl_requirement'
@@ -38,6 +44,8 @@ gem 'meta_search'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
+
+gem 'rake', '0.9.2'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
