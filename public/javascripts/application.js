@@ -13,6 +13,7 @@ $(document).ready(function(){
   $('.logout-button').button({icons: {primary: 'ui-icon-power'}});
   $('.account-button').button({icons: {primary: 'ui-icon-person'}});
   $('.admin-button').button({icons: {primary: 'ui-icon-wrench'}});
+  $('.print-button').button({icons: {primary: 'ui-icon-print'}});
 
   form.find('.fields').each(decorateRsvp);
 

@@ -1,16 +1,25 @@
+<%= link_to_function "Print this Page", "javascript:print()", :class => 'print-button' %>
 <h1><%= @event.title %></h1>
 <%= raw @event.description %>
+<div class="clear"></div>
+<hr />
 
-<img src="/images/map_icon.png" alt="Map Icon" align="left" style="margin-right: 10px"/>
+<img src="/images/map_icon.png" alt="Map Icon" align="right" style="margin-right: 10px"/>
 <h2>Map</h2>
+<p><%= raw @event.location %></p>
 <%= raw @event.maphtml %>
+<div class="clear"></div>
+<hr />
 
-<img src="/images/hotel_icon.png" alt="Accommodation Icon" align="left" style="margin-right: 10px"/>
+<img src="/images/hotel_icon.png" alt="Accommodation Icon" align="right" style="margin-right: 10px"/>
 <h2>Accommodation</h2>
 <%= raw @event.accommodation%>
+<div class="clear"></div>
+<hr />
 
-<img src="/images/present_icon.png" alt="Present Icon" align="left" style="margin-right: 10px"/>
+<img src="/images/present_icon.png" alt="Present Icon" align="right" style="margin-right: 10px"/>
 <h2>Presents</h2>
 <%= raw @event.presents %>
+<div class="clear"></div>
 
 

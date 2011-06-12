@@ -29,6 +29,7 @@ class Rsvp < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: rsvps
@@ -38,5 +39,7 @@ end
 #  notes      :text
 #  created_at :datetime
 #  updated_at :datetime
+#  attending  :string(255)     default("unknown")
+#  greeting   :string(255)
 #
 

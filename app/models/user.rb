@@ -119,6 +119,7 @@ class User < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: users
@@ -139,9 +140,7 @@ end
 #  fb_id                :string(255)
 #  created_at           :datetime
 #  updated_at           :datetime
-#  opt_in               :boolean         default(TRUE), not null
 #  role                 :string(255)     default("user")
-#  admin                :boolean
 #  photo_file_name      :string(255)
 #  photo_content_type   :string(255)
 #  photo_file_size      :integer
@@ -150,5 +149,13 @@ end
 #  allergic_nuts        :boolean         default(FALSE)
 #  allergic_wheat       :boolean         default(FALSE)
 #  notes                :text
+#  region               :string(255)
+#  country              :string(255)
+#  lat                  :float
+#  lon                  :float
+#  greeting             :string(255)
+#  dance_song           :string(255)
+#  romantic_song        :string(255)
+#  diet_comments        :text
 #
 

@@ -24,6 +24,9 @@ RailsAdmin.config do |config|
     end
 
     edit do
+      field :title
+      field :start_date
+      field :end_date
       field :description, :text do
         ckeditor true
       end
@@ -33,6 +36,10 @@ RailsAdmin.config do |config|
       field :presents, :text do
         ckeditor true
       end
+      field :location
+      field :lat
+      field :lon
+      field :maphtml
 
     end
     

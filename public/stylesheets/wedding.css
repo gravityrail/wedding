@@ -52,6 +52,8 @@ h3 {
   color: #228822;
 }
 
+.print-button {float: right;}
+
 .emboss_red {
 	-moz-text-shadow: 0px -1px 0px #442222;
 	-webkit-text-shadow: 0px -1px 0px #442222;

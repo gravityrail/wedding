@@ -1,0 +1,4 @@
+#account {display: none}
+#logo img {display: none}
+a:after { content:' [' attr(href) '] '}
+.print-button {display:none}
