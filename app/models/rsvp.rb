@@ -6,7 +6,7 @@ class Rsvp < ActiveRecord::Base
   has_many :rsvp_guests
   has_many :guests, :through => :rsvp_guests, :class_name => 'User'
 
-  accepts_nested_attributes_for :guests
+  accepts_nested_attributes_for :guests, :allow_destroy => true
 
   def self.for_email_at_event(email, event)
     found = find(:first, :include => [:guests, :event], :conditions => ['users.email = ? AND events.id = ?', email, event.id])

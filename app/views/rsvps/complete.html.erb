@@ -25,7 +25,7 @@
       <div>
         <%= gf.text_field :first_name, :class => 'watermark', :placeholder => 'First Name' %>
         <%= gf.text_field :last_name, :class => 'watermark', :placeholder => 'Last Name' %>
-        <%= gf.text_field :email, :class => 'watermark', :placeholder => 'Email Address' %>
+        <%= gf.text_field :email, :class => 'watermark', :placeholder => 'Email Address (optional)' %>
       </div>
       
       <h3>Dietary Preferences</h3>
@@ -53,11 +53,12 @@
       <h3>Music Selection</h3>
       <div>
         <p>We want to play music our guests love! Please specify the artist and song</p>
-        <%= gf.text_field :dance_song, :class => 'watermark', :placeholder => 'Dance Song' %>
-        <%= gf.text_field :romantic_song, :class => 'watermark', :placeholder => 'Romantic Song' %>
+        <%= gf.text_field :dance_song, :class => 'watermark', :placeholder => 'Dance Song (optional)' %>
+        <%= gf.text_field :romantic_song, :class => 'watermark', :placeholder => 'Romantic Song (optional)' %>
       </div>
-      <%= gf.link_to_remove "Remove Guest", :class => 'button' %>
     </div>
+    <hr />
+    <%= gf.link_to_remove "Remove #{guest.name}", :class => 'remove-button' %>
   <% end %>
 
   <p><h2 class="emboss_red">More people attending?</h2> <%= form.link_to_add "Add Another Guest", :guests, :class => 'add-button' %></p>

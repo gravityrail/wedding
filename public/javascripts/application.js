@@ -16,6 +16,7 @@ $(document).ready(function(){
   $('.account-button').button({icons: {primary: 'ui-icon-person'}});
   $('.admin-button').button({icons: {primary: 'ui-icon-wrench'}});
   $('.print-button').button({icons: {primary: 'ui-icon-print'}});
+  $('.remove-button').button({icons: {primary: 'ui-icon-circle-close'}});
 
   form.find('.fields').each(decorateRsvp);
 
