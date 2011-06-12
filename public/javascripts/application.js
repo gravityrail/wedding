@@ -5,6 +5,8 @@ $(document).ready(function(){
   //$('.watermark').clearingInput();
   form = $('form.edit_rsvp');
 
+  $.backstretch("/images/tahoe.jpg");
+
   form.find('#attending').buttonset();  
   $('.button').button();
   $('.add-button').button({icons: {primary: 'ui-icon-circle-plus'}});
