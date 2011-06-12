@@ -1,3 +1,0 @@
-<%= form.fields_for :guests, guest, :child_index => 'new_'+child_index.to_s do |guest_form| %>
-  <%= render :partial => 'rsvp/partner', :locals => {:form => guest_form} %>
-<% end %>

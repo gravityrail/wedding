@@ -1,7 +1,7 @@
 <h1 class="emboss_red">RSVP for <%= @event.title %></h1>
 <p style="font-weight: bold; text-decoration: underline;">Please fill in all details, add any additional guests, and click "Update RSVP"</p>
 <p>
-<%= @event.description %>
+<%= raw @event.description %>
 </p>
 <div id="rsvp_container">
 <%= nested_form_for [@event, @rsvp] do |form| %>
@@ -63,6 +63,7 @@
   <p><h2 class="emboss_red">More people attending?</h2> <%= form.link_to_add "Add Another Guest", :guests, :class => 'add-button' %></p>
   <hr />
   <h2>Notes/Comments</h2>
+  <p>If possible, please let us know if you are coming to just part of the festivities and if you have any additional questions or requirements.</p>
   <%= form.text_area :notes, :cols => 80, :rows => 6 %>
   <hr />
   <p><h2 class="emboss_red">All done?</h2> <%= form.submit :class => 'save-button' %></p>
