@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612155150) do
+ActiveRecord::Schema.define(:version => 20110612211808) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110612155150) do
     t.text     "maphtml"
     t.text     "accommodation"
     t.text     "presents"
+    t.text     "transport"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

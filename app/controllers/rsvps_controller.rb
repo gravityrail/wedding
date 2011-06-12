@@ -22,7 +22,7 @@ class RsvpsController < ApplicationController
     if(@rsvp)
       redirect_to :action => 'complete', :event_id => @event.id, :email => email
     else
-      flash[:notice] = "Email not found #{email}"
+      flash[:notice] = "Email not found #{email}. Please email wedding@secretloveadventure.com if you think you're seeing this message in error."
       redirect_to :root
     end
   end

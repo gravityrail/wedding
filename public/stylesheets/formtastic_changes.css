@@ -17,3 +17,4 @@ form.formtastic {font-size: larger;}
 form.formtastic .inline-hints {clear: both; font-size: smaller; border: 1px solid #888; display: block; padding: 10px;}
 form.formtastic fieldset > ol > li p.inline-hints {margin-top:30px;}
 form.formtastic label {font-weight: bold;}
+form.formtastic fieldset > ol > li p.inline-hints { color:#EEE; }
