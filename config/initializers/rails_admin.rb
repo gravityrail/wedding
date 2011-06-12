@@ -36,7 +36,12 @@ RailsAdmin.config do |config|
       field :presents, :text do
         ckeditor true
       end
-      field :location
+      field :transport, :text do
+        ckeditor true
+      end
+      field :location, :text do 
+        ckeditor true
+      end
       field :lat
       field :lon
       field :maphtml

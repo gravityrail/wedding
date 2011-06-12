@@ -15,6 +15,18 @@ class RsvpsController < ApplicationController
     @rsvp = Rsvp.for_email_at_event(email, @event)
   end
 
+  def search
+    email = params[:search_rsvp][:email]
+    @event = Event.find(params[:search_rsvp][:event_id])
+    @rsvp =  Rsvp.for_email_at_event(email, @event)
+    if(@rsvp)
+      redirect_to :action => 'complete', :event_id => @event.id, :email => email
+    else
+      flash[:notice] = "Email not found #{email}"
+      redirect_to :root
+    end
+  end
+
     # GET /people
   # GET /people.xml
   def index

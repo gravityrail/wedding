@@ -26,7 +26,9 @@ Wedding::Application.routes.draw do
   match "/download" => "pages#download_domains"
   
   match "/about" => "pages#about"
+
+  match "/rsvps/search" => "rsvps#search"
   
-  root :to => 'pages#tahoe'
+  root :to => 'pages#home'
  
 end
