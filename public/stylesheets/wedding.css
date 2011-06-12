@@ -4,7 +4,7 @@ body {
   font-family: Helvetica, Verdana, Ariel, sans-serif;
 }
 
-a {
+a, a:visited {
   color: #66AEEC;
 }
 
