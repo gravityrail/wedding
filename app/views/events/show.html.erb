@@ -23,9 +23,13 @@
 <div class="clear"></div>
 <hr />
 
-<img src="/images/present_icon.png" alt="Present Icon" align="right" style="margin-right: 10px"/>
 <h2>Presents</h2>
-<%= raw @event.presents %>
+<div class="column grid_10 alpha">
+  <%= raw @event.presents %>
+</div>
+<div class="column grid_2 omega">
+  <img src="/images/present_icon.png" alt="Present Icon"/>
+</div>
 <div class="clear"></div>
 
 

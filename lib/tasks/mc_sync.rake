@@ -6,11 +6,13 @@ namespace :wedding do
   task :sync => :environment do
     gb = Gibbon::API.new(API_KEY)
 
-    list_result = gb.list_members({:id => LIST_ID}) 
+    list_result = gb.list_members({:id => LIST_ID, :limit => 1000}) 
 
-#    puts "list_result: #{list_result.inspect}"
+    puts "list_result: #{list_result.inspect}"
 
     members = list_result['data']
+
+    puts "Number of members: #{members.count}"
 
 #    @users = gb.list_member_info({:id => SITE['mc_list_id'], :email_address => [email]})
     members.each do |m|
@@ -42,8 +44,6 @@ namespace :wedding do
         :lat => geo['latitude'],
         :lon => geo['longitude']
       })
-
-      puts "Last name: #{u.last_name}\n\n"
 
       u.save!
     end
