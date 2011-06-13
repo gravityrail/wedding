@@ -8,6 +8,12 @@ class Rsvp < ActiveRecord::Base
 
   accepts_nested_attributes_for :guests, :allow_destroy => true
 
+  before_save :update_greeting
+
+  def update_greeting
+    @greeting = guests.map{|g| g.name}.join(' and ')
+  end
+
   def self.for_email_at_event(email, event)
     found = find(:first, :include => [:guests, :event], :conditions => ['users.email = ? AND events.id = ?', email, event.id])
     if(found)
