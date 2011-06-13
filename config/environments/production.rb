@@ -47,6 +47,6 @@ Wedding::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  ENV['fbappid'] = "189569747733018"
-  ENV['fbsecret'] = "52629dbf7051474a6698904661e29f12"
+  ENV['fbappid'] = "228900693787558"
+  ENV['fbsecret'] = "ac7617454b94c247ad423bc59c0bfa60"
 end
