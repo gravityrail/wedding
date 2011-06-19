@@ -18,7 +18,18 @@ $(document).ready(function(){
   $('.print-button').button({icons: {primary: 'ui-icon-print'}});
   $('.remove-button').button({icons: {primary: 'ui-icon-circle-close'}});
 
+  $('.big-button').css({ width: '300px', 'padding-top': '10px', 'padding-bottom': '10px', 'font-size': '200%' });
+
   form.find('.fields').each(decorateRsvp);
+
+
+  //if no selected values, hide details and scroll down when selected
+  if(typeof($('#attending :radio:checked').val()) == 'undefined') {
+    form.find('#attending_details').hide();
+    form.find('#attending :radio').click(function(){
+      $('#attending_details').slideDown(2000);
+    });
+  }
 
   //update fields on adding new child
   form.bind('nested:fieldAdded', decorateRsvp);

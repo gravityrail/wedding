@@ -1,20 +1,7 @@
 <h1>Dan and Kellea's Secret Love Adventure</h1>
 <p>This is the web site for Dan and Kellea's 2011 Tahoe and 2012 Melbourne wedding-like events</p>
 <p>To edit your RSVP for the Tahoe event, enter your email below</p>
-<%= form_for :search_rsvp, :url => {:controller => 'rsvps', :action => 'search'} do |form| %>
-  <%= form.hidden_field :event_id, :value => 1 %>
-  <p>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </p>
-  <%= form.submit 'Search Tahoe RSVPs', :class => 'save-button' %>
-<% end %>
-<p>To edit your RSVP for the Melbourne event, enter your email below</p>
-<%= form_for :search_rsvp, :url => {:controller => 'rsvps', :action => 'search'} do |form| %>
-  <%= form.hidden_field :event_id, :value => 2 %>
-  <p>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </p>
-  <%= form.submit 'Seach Melbourne RSVPs', :class => 'save-button' %>
-<% end %>
+<% @event = Event.find(1) %>
+<%= render :partial => 'search', :locals => {:event => @event, :name => 'Tahoe'} %>
+
+<p>Melbourne event information coming soon!</p>

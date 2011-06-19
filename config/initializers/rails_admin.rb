@@ -25,6 +25,7 @@ RailsAdmin.config do |config|
 
     edit do
       field :title
+      field :short_name
       field :start_date
       field :end_date
       field :description, :text do

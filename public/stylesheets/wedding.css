@@ -259,4 +259,10 @@ div.pager a.prev_page, div.pager a.next_page{
 #rsvp_container .guest {
 }
 
-
+#callout {
+  border: 1px dashed #000;
+  padding: 10px;
+  margin: 10px;
+  background-color: #FFFF88;
+  color: black;
+}

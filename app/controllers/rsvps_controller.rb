@@ -3,7 +3,7 @@ class RsvpsController < ApplicationController
 
   #find an RSVP by email
   def complete
-    email = params[:email]
+    @email = params[:email]
 
     #gb = Gibbon::API.new(SITE['mc_api_key'])
 
@@ -12,7 +12,7 @@ class RsvpsController < ApplicationController
     #@users = gb.list_member_info({:id => SITE['mc_list_id'], :email_address => [email]})   
 
     @event = Event.find(params[:event_id])
-    @rsvp = Rsvp.for_email_at_event(email, @event)
+    @rsvp = Rsvp.for_email_at_event(@email, @event)
   end
 
   def search

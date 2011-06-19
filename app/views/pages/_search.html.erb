@@ -1,0 +1,9 @@
+<%= form_for :search_rsvp, :url => {:controller => 'rsvps', :action => 'search'} do |form| %>
+  <%= form.hidden_field :event_id, :value => event.id %>
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </p>
+  <%= form.submit "RSVP for the #{event.short_name} event", :class => 'save-button' %>
+<% end %>
+

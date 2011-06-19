@@ -1,9 +1,10 @@
 Wedding::Application.routes.draw do
 
+  match '/events/:id(/:email)', :controller => 'events', :action => 'show', :email => /[^\/]+/, :as => 'show_event'
 
   resources :events do
     resources :rsvps
-    match 'rsvps/complete/:email', :controller => 'rsvps', :action => 'complete', :email => /[^\/]+/
+    match 'rsvps/complete/:email', :controller => 'rsvps', :action => 'complete', :email => /[^\/]+/, :as => 'complete_rsvp'
   end
 
   devise_for :user, 

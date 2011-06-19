@@ -1,35 +1,35 @@
+<div id="callout">
 <%= link_to_function "Print this Page", "javascript:print()", :class => 'print-button' %>
-<h1><%= @event.title %></h1>
-<%= raw @event.description %>
-<div class="clear"></div>
-<hr />
+<% if(@rsvp) %>
+  <% if(@rsvp.attending) %>
+    <% case @rsvp.attending 
+      when 'yes' %>
+        You indicated you're attending! Wonderful!
+      <% when 'maybe' %>
+        You said you might be attending
+      <% when 'no' %>
+        You indicated you're not attending. Changed your mind?
+      <% else %>
+        Let us know if you can make it
+    <% end %>
 
-<img src="/images/map_icon.png" alt="Map Icon" align="right" style="margin-right: 10px"/>
-<h2>Map</h2>
-<p><%= raw @event.location %></p>
-<%= raw @event.maphtml %>
-<div class="clear"></div>
-<hr />
-
-<img src="/images/hotel_icon.png" alt="Accommodation Icon" align="right" style="margin-right: 10px"/>
-<h2>Accommodation</h2>
-<%= raw @event.accommodation%>
-<div class="clear"></div>
-<hr />
-
-<img src="/images/train_icon.png" alt="Transport Icon" align="right" style="margin-right: 10px"/>
-<h2>Transport</h2>
-<%= raw @event.transport %>
-<div class="clear"></div>
-<hr />
-
-<h2>Presents</h2>
-<div class="column grid_10 alpha">
-  <%= raw @event.presents %>
+    <%= link_to 'Update your RSVP', event_complete_rsvp_path(@event.id, @email), :class => 'button' %>
+  <% else %>
+    Let us know if you can make it! <%= link_to 'RSVP Now', event_complete_rsvp_path(@event.id, @email), :class => 'button' %>
+  <% end %>
+<% else %>
+  If you have received an email and would like to RSVP, please enter your email address here:
+  <%= render :partial => 'pages/search', :locals => {:event => @event} %> 
+<% end %>
+<p>
+<% if(@event.id == 1) %>
+  <% other_event = Event.find(2); other_event_name = 'Melbourne' %>
+<% else %>
+  <% other_event = Event.find(1); other_event_name = 'Tahoe' %>
+<% end %>
+<!--(You can also check out the <%= link_to "#{other_event_name} event page", show_event_path(other_event.id, @email) %>)-->
+</p>
 </div>
-<div class="column grid_2 omega">
-  <img src="/images/present_icon.png" alt="Present Icon"/>
-</div>
-<div class="clear"></div>
+<%= render :partial => 'events/show', :locals => { :event => @event } %>
 
 

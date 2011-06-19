@@ -1,0 +1,34 @@
+<h1><%= @event.title %></h1>
+<%= raw @event.description %>
+<div class="clear"></div>
+<hr />
+
+<img src="/images/map_icon.png" alt="Map Icon" align="right" style="margin-right: 10px"/>
+<h2>Map</h2>
+<p><%= raw @event.location %></p>
+<%= raw @event.maphtml %>
+<div class="clear"></div>
+<hr />
+
+<img src="/images/hotel_icon.png" alt="Accommodation Icon" align="right" style="margin-right: 10px"/>
+<h2>Accommodation</h2>
+<%= raw @event.accommodation%>
+<div class="clear"></div>
+<hr />
+
+<img src="/images/train_icon.png" alt="Transport Icon" align="right" style="margin-right: 10px"/>
+<h2>Transport</h2>
+<%= raw @event.transport %>
+<div class="clear"></div>
+<hr />
+
+<h2>Presents</h2>
+<div class="column grid_10 alpha">
+  <%= raw @event.presents %>
+</div>
+<div class="column grid_2 omega">
+  <img src="/images/present_icon.png" alt="Present Icon"/>
+</div>
+<div class="clear"></div>
+
+
