@@ -1,6 +1,6 @@
 <h1>Dan and Kellea's Secret Love Adventure</h1>
 <p>This is the web site for Dan and Kellea's 2011 Tahoe and 2012 Melbourne wedding-like events</p>
-<p>To edit your RSVP for the Tahoe event, enter your email below</p>
+<p>To edit your RSVP or view details for the Tahoe event, enter your email below and click a button</p>
 <% @event = Event.find(1) %>
 <%= render :partial => 'search', :locals => {:event => @event, :name => 'Tahoe'} %>
 

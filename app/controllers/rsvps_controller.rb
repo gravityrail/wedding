@@ -20,7 +20,11 @@ class RsvpsController < ApplicationController
     @event = Event.find(params[:search_rsvp][:event_id])
     @rsvp =  Rsvp.for_email_at_event(email, @event)
     if(@rsvp)
-      redirect_to :action => 'complete', :event_id => @event.id, :email => email
+      if(params[:rsvp])
+        redirect_to :action => 'complete', :event_id => @event.id, :email => email
+      else
+        redirect_to show_event_path(@event.id, email)
+      end
     else
       flash[:notice] = "Email not found #{email}. Please email wedding@secretloveadventure.com if you think you're seeing this message in error."
       redirect_to :root

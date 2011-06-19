@@ -7,10 +7,17 @@ $(document).ready(function(){
 
   $.backstretch("/images/tahoe.jpg");
 
+  //make input buttons style-able with icons
+  /*$('input:submit, input:reset').each(function(){
+    $(this).replaceWith('<button class="'+$(this).attr('class')+'" type="' + $(this).attr('type') + '">' + $(this).val() + '</button>');
+  });*/
+
+
   form.find('#attending').buttonset();  
   $('.button').button();
   $('.add-button').button({icons: {primary: 'ui-icon-circle-plus'}});
   $('.save-button').button({icons: {primary: 'ui-icon-check'}});
+  $('.search-button').button({icons: {primary: 'ui-icon-search'}});
   $('.back-button').button({icons: {primary: 'ui-icon-triangle-1-w'}});
   $('.logout-button').button({icons: {primary: 'ui-icon-power'}});
   $('.account-button').button({icons: {primary: 'ui-icon-person'}});

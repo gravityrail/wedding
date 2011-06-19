@@ -4,7 +4,7 @@ class Rsvp < ActiveRecord::Base
 
   belongs_to :event
   has_many :rsvp_guests
-  has_many :guests, :through => :rsvp_guests, :class_name => 'User'
+  has_many :guests, :through => :rsvp_guests, :class_name => 'User', :order => 'id asc'
 
   accepts_nested_attributes_for :guests, :allow_destroy => true
 

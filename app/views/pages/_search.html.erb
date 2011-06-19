@@ -4,6 +4,7 @@
     <%= form.label :email %>
     <%= form.text_field :email %>
   </p>
-  <%= form.submit "RSVP for the #{event.short_name} event", :class => 'save-button' %>
+  <%= form.submit "RSVP for the #{event.short_name} event", :class => 'button', :name => 'rsvp' %>
+  <%= form.submit "View details for the #{event.short_name} event", :class => 'button', :name => 'view' %>
 <% end %>
 
