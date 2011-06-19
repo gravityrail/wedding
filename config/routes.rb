@@ -29,6 +29,8 @@ Wedding::Application.routes.draw do
   match "/about" => "pages#about"
 
   match "/rsvps/search" => "rsvps#search"
+
+  match "/rsvp_csv" => "pages#rsvp_csv"
   
   root :to => 'pages#home'
  
