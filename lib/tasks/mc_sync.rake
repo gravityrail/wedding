@@ -32,10 +32,8 @@ namespace :wedding do
       u = User.find_or_initialize_by_email(email)
 
       if(u.new_record?)
-        u.update_attributes({:password => 'ab4321', :password_confirm => 'ab4321'})
-      end
-
-      u.update_attributes({
+       u.update_attributes({:password => 'ab4321', :password_confirm => 'ab4321'})
+       u.update_attributes({
         :greeting => merges['GREETING'],
         :first_name => merges['FNAME'],
         :last_name => merges['LNAME'],
@@ -43,9 +41,9 @@ namespace :wedding do
         :region => geo['region'],
         :lat => geo['latitude'],
         :lon => geo['longitude']
-      })
-
-      u.save!
+       })       
+       u.save!
+      end
     end
   end
 
