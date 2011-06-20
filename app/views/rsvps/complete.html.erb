@@ -10,6 +10,7 @@
 </p>
 <div id="rsvp_container">
 <%= nested_form_for [@event, @rsvp] do |form| %>
+  <%= hidden_field_tag 'email', @email %>
   <h2 class="emboss_red">I am/We are attending:</h2>
   <div id="attending">
     <% Rsvp::ATTENDING_ENUM.each do |att| %>

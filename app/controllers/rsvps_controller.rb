@@ -90,12 +90,13 @@ class RsvpsController < ApplicationController
   def update
     @rsvp = Rsvp.find(params[:id])
     @event = Event.find(params[:event_id])
+    email = params[:email]
 
     respond_to do |format|
       if @rsvp.update_attributes(params[:rsvp])
         format.html { 
           #redirect_to(@rsvp, :notice => 'Rsvp was successfully updated.') 
-          redirect_to(@event, :notice => 'Rsvp was successfully updated.') 
+          redirect_to show_event_path(@event.id, email), :notice => 'Rsvp was successfully updated.'
         }
         format.xml  { head :ok }
       else
