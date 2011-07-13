@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :message => 'that person is already invited!'
   validates_format_of :email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, :message => 'email address must be valid'  
 #  before_create :set_unique_key
+
+  #has_many :rsvp_guests
+  #has_many :rsvps, :through => :rsvp_guests
   
   has_attached_file :photo,
 #    :storage => :s3,

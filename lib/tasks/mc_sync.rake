@@ -67,4 +67,40 @@ namespace :wedding do
       end
     end
   end
+
+  desc "update mailchimp merge tags"
+  task :update_mc => :environment do
+    gb = Gibbon::API.new(API_KEY)
+
+    User.order('email asc').each do |guest|
+      melb_rsvp = Rsvp.joins(:guests, :event).where('events.id' => 2, 'users.id' => guest.id).first
+      melb_attending = 'unknown'
+      if(melb_rsvp.nil?)
+        puts "Error! No RSVP for #{guest.email}"
+      else
+        melb_attending = melb_rsvp.attending
+        puts "#{guest.email} has melbourne RSVP: #{melb_rsvp.attending}"
+      end
+
+      tahoe_rsvp = Rsvp.joins(:guests, :event).where('events.id' => 1, 'users.id' => guest.id).first
+      tahoe_attending = 'unknown'
+      if(tahoe_rsvp.nil?)
+        puts "Error! No RSVP for #{guest.email}"
+      else
+        tahoe_attending = tahoe_rsvp.attending
+        puts "#{guest.email} has tahoe RSVP: #{tahoe_rsvp.attending}"
+      end
+      
+      merge_vars = {'TAHOE_RSVP' => tahoe_attending, 'MELB_RSVP' => melb_attending}
+      result = gb.list_update_member({:id => LIST_ID, :email_address => guest.email, :merge_vars => merge_vars})
+      puts "update success: #{result}"
+    end
+
+
+    # u = User.find_by_email('goldsounds@gmail.com')
+
+    # 
+    # 
+    # puts "done: #{result.inspect}"
+  end
 end
