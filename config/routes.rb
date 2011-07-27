@@ -30,7 +30,8 @@ Wedding::Application.routes.draw do
 
   match "/rsvps/search" => "rsvps#search"
 
-  match "/rsvp_csv" => "pages#rsvp_csv"
+  match "/rsvp_tahoe" => "pages#rsvp_tahoe"
+  match "/rsvp_melbourne" => "pages#rsvp_melbourne"
   
   root :to => 'pages#home'
  
