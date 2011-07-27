@@ -74,7 +74,7 @@ namespace :wedding do
 
     User.order('email asc').each do |guest|
       melb_rsvp = Rsvp.joins(:guests, :event).where('events.id' => 2, 'users.id' => guest.id).first
-      melb_attending = 'unknown'
+      melb_attending = 'error'
       if(melb_rsvp.nil?)
         puts "Error! No RSVP for #{guest.email}"
       else
@@ -83,7 +83,7 @@ namespace :wedding do
       end
 
       tahoe_rsvp = Rsvp.joins(:guests, :event).where('events.id' => 1, 'users.id' => guest.id).first
-      tahoe_attending = 'unknown'
+      tahoe_attending = 'error'
       if(tahoe_rsvp.nil?)
         puts "Error! No RSVP for #{guest.email}"
       else
