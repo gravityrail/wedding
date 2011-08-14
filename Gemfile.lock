@@ -84,6 +84,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    Ascii85 (1.0.1)
     abstract (1.0.0)
     actionmailer (3.0.7)
       actionpack (= 3.0.7)
@@ -151,6 +152,10 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
+    geokit (1.5.0)
+    geokit-rails3 (0.1.3)
+      geokit (~> 1.5.0)
+      rails (~> 3.0.4)
     gherkin (2.4.0)
       json (>= 1.4.6)
     gibbon (0.1.6)
@@ -195,8 +200,13 @@ GEM
     paperclip (2.3.11)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
+    pdf-reader (0.10.0)
+      Ascii85 (~> 1.0.0)
     pg (0.11.0)
     polyglot (0.3.1)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -264,6 +274,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    ttfunk (1.0.2)
     tzinfo (0.3.27)
     unicorn (3.6.2)
       kgio (~> 2.3)
@@ -287,6 +298,7 @@ DEPENDENCIES
   factory_girl_rails
   fastercsv
   formtastic
+  geokit-rails3
   gibbon
   heroku
   launchy
@@ -296,6 +308,7 @@ DEPENDENCIES
   omniauth!
   paperclip (= 2.3.11)
   pg
+  prawn
   rails (= 3.0.7)
   rails_admin!
   rake (= 0.8.7)

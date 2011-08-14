@@ -11,6 +11,10 @@ gem 'paperclip', '2.3.11'
 
 gem 'pg'
 
+gem 'geokit-rails3'
+gem 'prawn'
+#gem 'country_select'
+
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
 gem 'omniauth', :git => 'https://github.com/intridea/omniauth.git'

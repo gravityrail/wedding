@@ -62,8 +62,13 @@ RailsAdmin.config do |config|
       field :first_name
       field :last_name
       field :email
+      field :street
+      field :city
+      field :zip
       field :region
       field :country
+      field :lat
+      field :lon
     end
   end
 

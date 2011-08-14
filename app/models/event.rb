@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  acts_as_mappable :lat_column_name => 'lat', :lng_column_name => 'lon', :default_units => :miles
   has_many :rsvps
 end
 

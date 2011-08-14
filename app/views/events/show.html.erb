@@ -5,6 +5,17 @@
     <% case @rsvp.attending 
       when 'yes' %>
         You indicated you're attending! Wonderful!
+		<% if !(@event.lat.nil? || @event.lon.nil?) %>
+			<% @rsvp.guests.each do |guest| %>
+				<ul>
+				<% if !(guest.lat.nil? || guest.lon.nil?) %>
+					<li>Guest <%= guest.name %> is travelling <%= guest.distance_from(@event, :units => :miles).to_i %> miles to attend, all the way from <%= guest.region %>, <%= guest.country %></li>
+					<% farthest_guest = User.attending(@event).farthest(:origin => guest, :units => :miles).first %>
+					<li>The farthest guest from <%= guest.name %> is <%= farthest_guest.name %> in <%= farthest_guest.region %>, <%= farthest_guest.country %> - <%= farthest_guest.distance_from(guest).to_i %> miles away!</li>
+				<% end %>
+				</ul>
+			<% end %>
+		<% end %>
       <% when 'maybe' %>
         You said you might be attending
       <% when 'no' %>
@@ -21,14 +32,15 @@
   If you have received an email and would like to RSVP, please enter your email address here:
   <%= render :partial => 'pages/search', :locals => {:event => @event} %> 
 <% end %>
-<p>
+<!--<p>
 <% if(@event.id == 1) %>
   <% other_event = Event.find(2); other_event_name = 'Melbourne' %>
 <% else %>
   <% other_event = Event.find(1); other_event_name = 'Tahoe' %>
 <% end %>
-<!--(You can also check out the <%= link_to "#{other_event_name} event page", show_event_path(other_event.id, @email) %>)-->
-</p>
+(You can also check out the <%= link_to "#{other_event_name} event page", show_event_path(other_event.id, @email) %>)
+</p>-->
+
 </div>
 <%= render :partial => 'events/show', :locals => { :event => @event } %>
 

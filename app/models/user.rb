@@ -1,8 +1,15 @@
 class User < ActiveRecord::Base
-
+  acts_as_mappable :lat_column_name => 'lat', :lng_column_name => 'lon', :default_units => :miles
+  before_validation :geocode_address
+  
   DIET_ENUM = ['none', 'vegetarian', 'vegan', 'pescetarian']
 
-  before_validation_on_create :ensure_password
+  scope :attending, lambda { |event| User.joins(:rsvps).where('rsvps.event_id' => event.id, 'rsvps.attending' => 'yes') } 
+
+  has_many :rsvp_guests, :foreign_key => 'guest_id'
+  has_many :rsvps, :through => :rsvp_guests, :order => 'id asc'
+  
+  before_validation :ensure_password, :on => :create
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -13,8 +20,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
                   :first_name, :last_name, :opt_in, :fb_id, :role,
                   :diet, :allergic_nuts, :allergic_wheat, :notes, :diet_comments,
-                  :region, :country, :lat, :lon,
+                  :street, :city, :zip, :region, :country, :lat, :lon,
                   :greeting, :dance_song, :romantic_song
+                  
 
   #validates_presence_of :email, :message => "please fill out the required fields"
   validates_uniqueness_of :email, :message => 'that person is already invited!'
@@ -42,7 +50,35 @@ class User < ActiveRecord::Base
       @password_confirmation = pass
     end
   end
-
+  
+  def has_location?
+    !(self.lat.nil? || self.lon.nil?)
+  end
+  
+  def has_address?
+    !((self.region.nil? || self.region == '-') && (self.country.nil? || self.country == '-'))
+  end
+  
+  def address
+    a = ''
+    unless(self.street.nil?)
+      a += street + ", "
+    end
+    unless(self.city.nil?)
+      a += city + ", "
+    end
+    unless(self.region.nil?)
+      a += region + ' '
+    end
+    unless(self.zip.nil?)
+      a += zip + ", "
+    end
+    unless(self.country.nil?)
+      a += country
+    end
+    a
+  end
+  
   def self.new_without_password(args = {})
     password = Devise.friendly_token[0,20]
     User.new(args.merge(:password=>password, :password_confirmation=>password))
@@ -118,6 +154,14 @@ class User < ActiveRecord::Base
       
       return props
       
+    end
+    
+    def geocode_address
+      if(self.has_address?)
+        geo=Geokit::Geocoders::MultiGeocoder.geocode (address)
+        errors.add(:address, "Could not Geocode address") if !geo.success
+      end
+      self.lat, self.lon = geo.lat, geo.lng if geo.success
     end
 end
 

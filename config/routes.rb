@@ -1,11 +1,16 @@
 Wedding::Application.routes.draw do
 
-  match '/events/:id(/:email)', :controller => 'events', :action => 'show', :email => /[^\/]+/, :as => 'show_event'
-
+  match '/users/without_location' => 'pages#user_addresses', :as => 'user_addresses'
+  
+  resources :users
+  
   resources :events do
     resources :rsvps
+    match 'badges', :action => 'badges'
     match 'rsvps/complete/:email', :controller => 'rsvps', :action => 'complete', :email => /[^\/]+/, :as => 'complete_rsvp'
   end
+  
+  match '/events/:id(/:email)', :controller => 'events', :action => 'show', :email => /[^\/]+/, :as => 'show_event'
 
   devise_for :user, 
     :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },

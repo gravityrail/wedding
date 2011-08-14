@@ -7,6 +7,15 @@ class PagesController < ApplicationController
   def download_users
     render :csv => DownloadUsers.new, :status => :ok
   end
+  
+  def user_addresses
+    @users = User.where('lat IS NULL and lon IS NULL').order('last_name asc')
+  end
+  
+  def update_user
+    user = User.find(params[:id])
+    
+  end
 
   def rsvp_tahoe
     @rsvps = Array.new
