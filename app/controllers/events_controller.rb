@@ -10,19 +10,22 @@ class EventsController < ApplicationController
   def badges
     @event = Event.find(params[:event_id])
     puts "Got event #{@event.title}"
-    # generate PDFs of badges (and programmes?)
+  end
+    
+  def badges_pdf
+        # generate PDFs of badges (and programmes?)
     require "prawn"
 
-    prefix = 'hello'
+    prefix = 'tahoe_badges'
 
 #    "LETTER" => [612.00, 792.00]
 
     f = Tempfile.new(prefix, "#{Rails.root}/tmp")
 
     Prawn::Document.generate(f.path, :page_size => "LETTER") do
-#      text "Hello World!"
+
       event = Event.find(1)
-#      stroke_axis
+
       count = 0
       top = 692
       User.attending(event).each do |guest|
@@ -50,7 +53,7 @@ class EventsController < ApplicationController
               end
             end
           end
-          
+
           #text "#{left}, #{top}"
           #text "count: #{count}"
           stroke_bounds
@@ -70,9 +73,15 @@ class EventsController < ApplicationController
         end
       end
     end
-    
+
+    if(params[:download])
+      disposition = 'attachment'
+    else
+      disposition = 'inline'
+    end
+
     send_data f.read, :filename => 'hello.pdf', 
-                          :type => "application/pdf", :disposition => 'inline'
+                          :type => "application/pdf", :disposition => disposition
     f.close
   end
 end

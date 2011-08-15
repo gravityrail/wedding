@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+#  load_and_authorize_resource
+  
   # PUT /people/1
   # PUT /people/1.xml
   def update

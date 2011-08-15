@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_many :rsvps, :through => :rsvp_guests, :order => 'id asc'
   
   before_validation :ensure_password, :on => :create
-
+  before_validation :ensure_email
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -137,6 +138,14 @@ class User < ActiveRecord::Base
   end
   
   private 
+    def ensure_email
+      puts "** checking email #{self.email} **"
+      if(self.email.nil? || self.email.empty?)
+        self.email = self.first_name.downcase+'.'+self.last_name.downcase+'@example.com'
+        puts "** set email to #{self.email} **"
+      end
+      
+    end
   
     #return a hash of properties from the facebook authentication token hash
     def self.facebook_properties(attrs = {})
@@ -160,8 +169,8 @@ class User < ActiveRecord::Base
       if(self.has_address?)
         geo=Geokit::Geocoders::MultiGeocoder.geocode (address)
         errors.add(:address, "Could not Geocode address") if !geo.success
+        self.lat, self.lon = geo.lat, geo.lng if geo.success
       end
-      self.lat, self.lon = geo.lat, geo.lng if geo.success
     end
 end
 

@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  
+#  authorize_resource :class => false
+  
   require 'download_users'
 
   #before_filter :authenticate, :only => [:download_users]
@@ -12,9 +15,11 @@ class PagesController < ApplicationController
     @users = User.where('lat IS NULL and lon IS NULL').order('last_name asc')
   end
   
-  def update_user
-    user = User.find(params[:id])
-    
+  def user_attending_tahoe
+    @user = User.find(params[:id])
+    if(@user.nil?)
+      @user = User.new
+    end
   end
 
   def rsvp_tahoe
