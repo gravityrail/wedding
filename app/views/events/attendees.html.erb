@@ -17,12 +17,33 @@ function initialize() {
   var map = new google.maps.Map(
       document.getElementById("map_canvas"),
       myOptions);
- 
-  var myLatLng = new google.maps.LatLng(<%= @event.lat %>, <%= @event.lon %>);
+
+  //var guestsLayer = new google.maps.KmlLayer('<%= event_attendees_url(@event) %>.kml');
+  //guestsLayer.setMap(map);
+
+	var image = '/images/smiley_happy.png';
+	<% @attendees.each do |guest| %>
+		var l = new google.maps.LatLng(<%= guest.lat %>, <%= guest.lon %>);
+		var m = new google.maps.Marker({
+		      position: l,
+		      map: map,
+			  icon: image
+		  });
+		/*var i = new google.maps.InfoWindow({
+		    content: '<div style="color: black;"><h3><%= guest.name %></h3><p><%= guest.address %></p></div>'
+		});
+		google.maps.event.addListener(m, 'click', function() {
+		  i.open(map,m);
+		});*/
+	<% end %>
+
+  var eventLatLng = new google.maps.LatLng(<%= @event.lat %>, <%= @event.lon %>);
+  var eventImage = '/images/wedding.png';
   var eventMarker = new google.maps.Marker({
-      position: myLatLng,
+      position: eventLatLng,
       map: map,
-	  animation: google.maps.Animation.DROP,
+      icon: eventImage,
+	  animation: google.maps.Animation.DROP
   });
 	var eventInfoWindow = new google.maps.InfoWindow({
 	    content: '<h1 style="color: black;">Lake Tahoe!</h1>'
@@ -30,10 +51,6 @@ function initialize() {
 	google.maps.event.addListener(eventMarker, 'click', function() {
 	  eventInfoWindow.open(map,eventMarker);
 	});
-
-  var guestsLayer = new google.maps.KmlLayer('<%= event_attendees_url(@event) %>.kml');
- 
-  guestsLayer.setMap(map);
 /*  google.maps.event.addListener(nyLayer, 'click', function(kmlEvent) {
     var text = kmlEvent.featureData.description;
     showInContentWindow(text);
