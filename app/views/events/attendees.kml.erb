@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
   <% @attendees.each do |user| %>
   <Placemark>
     <name><%= user.name %></name>
-    <description><%= user.address %></description>
+    <description><![CDATA[
+		<%= user.address %>
+		]]>
+	</description>
     <Point>
-      <coordinates><%= user.lat %>,<%= user.lon %>,0</coordinates>
+      <coordinates><%= user.lon %>,<%= user.lat %>,0</coordinates>
     </Point>
   </Placemark>
   <% end %>
+  </Document>
 </kml>
