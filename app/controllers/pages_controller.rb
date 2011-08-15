@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
   
   def user_addresses
-    @users = User.where('lat IS NULL and lon IS NULL').order('last_name asc')
+    @users = User.attending(Event.find(1)).where('lat IS NULL and lon IS NULL').order('last_name asc')
   end
   
   def user_attending_tahoe

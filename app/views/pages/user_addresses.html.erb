@@ -1,3 +1,5 @@
+There are <%= @users.count %> users without full geocoding information.
+
 <% @users.each do |user| %>
 	<%= semantic_form_for user, :remote => true, :html => {:class => 'userform'} do |f| %>
 		
@@ -5,12 +7,12 @@
 			<%= f.input :email, :input_html=>{:size=>20} %>
 			<%= f.input :first_name, :input_html=>{:size=>20} %>
 			<%= f.input :last_name, :input_html=>{:size=>20} %>
-			<%= f.input :lat %>, <%= f.input :lon %>
-			<%= f.input :street %>
-			<%= f.input :city %>
-			<%= f.input :zip %>
-			<%= f.input :region %>
-			<%= f.input :country, :as => :string %>
+			<!--<%= f.input :lat, :input_html=>{:size=>20} %>, <%= f.input :lon, :input_html=>{:size=>20} %>-->
+			<%= f.input :street,:input_html=>{:size=>20} %>
+			<%= f.input :city,:input_html=>{:size=>20} %>
+			<%= f.input :zip,:input_html=>{:size=>20} %>
+			<%= f.input :region,:input_html=>{:size=>20} %>
+			<%= f.input :country, :as => :string,:input_html=>{:size=>20} %>
 	    <% end %>
 		<div class="errors" style="background-color: #FFAAAA; color: black;"></div>
 		<div class="notice" style="background-color: #FFFFAA; color: black;"></div>
@@ -18,6 +20,7 @@
 			<%= f.commit_button :label=>'Update' %>
 	    <% end %>
 	<% end %>
+	<hr />
 <% end %>
 <script>
 	$(document).ready(function(){

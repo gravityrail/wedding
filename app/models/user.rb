@@ -139,10 +139,10 @@ class User < ActiveRecord::Base
   
   private 
     def ensure_email
-      puts "** checking email #{self.email} **"
+#      puts "** checking email #{self.email} **"
       if(self.email.nil? || self.email.empty?)
         self.email = self.first_name.downcase+'.'+self.last_name.downcase+'@example.com'
-        puts "** set email to #{self.email} **"
+#        puts "** set email to #{self.email} **"
       end
       
     end
