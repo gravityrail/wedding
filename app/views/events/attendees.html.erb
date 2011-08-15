@@ -7,9 +7,9 @@
 
 <script type="text/javascript"> 
 function initialize() {
-  var myLatlng = new google.maps.LatLng(40.65, -73.95);
+  var myLatlng = new google.maps.LatLng(<%= @event.lat %>, <%= @event.lon %>);
   var myOptions = {
-    zoom: 12,
+    zoom: 4,
     center: myLatlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -18,11 +18,22 @@ function initialize() {
       document.getElementById("map_canvas"),
       myOptions);
  
-  var nyLayer = new google.maps.KmlLayer(
-	  '<%= event_attendees_url(@event) %>.kml',
-      {  suppressInfoWindows: false,
-         map: map});
+  var myLatLng = new google.maps.LatLng(<%= @event.lat %>, <%= @event.lon %>);
+  var eventMarker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+	  animation: google.maps.Animation.DROP,
+  });
+	var eventInfoWindow = new google.maps.InfoWindow({
+	    content: '<h1 style="color: black;">Lake Tahoe!</h1>'
+	});
+	google.maps.event.addListener(eventMarker, 'click', function() {
+	  eventInfoWindow.open(map,eventMarker);
+	});
+
+  var guestsLayer = new google.maps.KmlLayer('<%= event_attendees_url(@event) %>.kml');
  
+  guestsLayer.setMap(map);
 /*  google.maps.event.addListener(nyLayer, 'click', function(kmlEvent) {
     var text = kmlEvent.featureData.description;
     showInContentWindow(text);

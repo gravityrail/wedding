@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
       a += city + ", "
     end
     unless(self.region.nil? || self.region.empty?)
-      a += region + ' '
+      a += region + ', '
     end
     unless(self.zip.nil? || self.zip.empty?)
       a += zip + ", "
