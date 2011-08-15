@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
   
   def user_addresses
-    @users = User.attending(Event.find(1)).with_location.order('last_name asc')
+    @users = User.attending(Event.find(1)).without_location.order('last_name asc')
   end
   
   def user_attending_tahoe

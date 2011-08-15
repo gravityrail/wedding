@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   DIET_ENUM = ['none', 'vegetarian', 'vegan', 'pescetarian']
 
   scope :attending, lambda { |event| User.joins(:rsvps).where('rsvps.event_id' => event.id, 'rsvps.attending' => 'yes') } 
-  scope :with_location, where('lat IS NOT NULL and lon IS NOT NULL')
+  scope :without_location, where('city IS NULL OR (lat IS NULL and lon IS NULL)')
   
   has_many :rsvp_guests, :foreign_key => 'guest_id'
   has_many :rsvps, :through => :rsvp_guests, :order => 'id asc'
