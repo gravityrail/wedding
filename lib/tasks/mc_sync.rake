@@ -43,6 +43,16 @@ namespace :wedding do
         :lon => geo['longitude']
        })       
        u.save!
+      else
+        if(!u.has_location?)
+          u.lat = geo['latitude']
+          u.lon = geo['longitude']
+        end
+        if(!u.has_address?)
+          u.country = geo['cc']
+          u.region = geo['region']
+        end
+        u.save!
       end
     end
   end

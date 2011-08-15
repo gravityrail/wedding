@@ -9,6 +9,8 @@
     <%= link_to 'Account', {:action=>"edit", :controller=>"devise/registrations"}, :class => 'account-button' %>
     <%= link_to 'Logout', {:action=>"destroy", :controller=>"devise/sessions"}, :class => 'logout-button' %>
     <% if(current_user.admin?) %>
+	  <%= link_to 'Addresses', user_addresses_path, :class => 'button' %>
+  	  <%= link_to 'Badges', event_badges_path(Event.find(1)), :class => 'button' %>
       <%= link_to 'Admin', rails_admin_dashboard_url, :class => 'admin-button' %>
     <% end %>
   <% end %>
