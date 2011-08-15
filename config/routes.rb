@@ -8,6 +8,7 @@ Wedding::Application.routes.draw do
     resources :rsvps
     match 'badges', :action => 'badges'
     match 'badges_pdf', :action => 'badges_pdf'
+    match 'attendees', :action => 'attendees'
     match 'rsvps/complete/:email', :controller => 'rsvps', :action => 'complete', :email => /[^\/]+/, :as => 'complete_rsvp'
   end
   

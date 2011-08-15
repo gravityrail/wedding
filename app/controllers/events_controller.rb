@@ -7,6 +7,11 @@ class EventsController < ApplicationController
     end
   end
   
+  def attendees
+    @event = Event.find(params[:event_id])
+    @attendees = User.attending(@event).with_location
+  end
+  
   def badges
     @event = Event.find(params[:event_id])
     puts "Got event #{@event.title}"

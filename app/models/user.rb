@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   DIET_ENUM = ['none', 'vegetarian', 'vegan', 'pescetarian']
 
   scope :attending, lambda { |event| User.joins(:rsvps).where('rsvps.event_id' => event.id, 'rsvps.attending' => 'yes') } 
-
+  scope :with_location, where('lat IS NOT NULL and lon IS NOT NULL')
+  
   has_many :rsvp_guests, :foreign_key => 'guest_id'
   has_many :rsvps, :through => :rsvp_guests, :order => 'id asc'
   
@@ -62,19 +63,19 @@ class User < ActiveRecord::Base
   
   def address
     a = ''
-    unless(self.street.nil?)
+    unless(self.street.nil? || self.street.empty?)
       a += street + ", "
     end
-    unless(self.city.nil?)
+    unless(self.city.nil? || self.city.empty?)
       a += city + ", "
     end
-    unless(self.region.nil?)
+    unless(self.region.nil? || self.region.empty?)
       a += region + ' '
     end
-    unless(self.zip.nil?)
+    unless(self.zip.nil? || self.zip.empty?)
       a += zip + ", "
     end
-    unless(self.country.nil?)
+    unless(self.country.nil? || self.country.empty?)
       a += country
     end
     a

@@ -1,0 +1,37 @@
+<% content_for :head do %>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<% end %>
+
+<div id="map_canvas" style="width:800px; height:800px;"></div> 
+<!--<div id="content_window" style="width:19%; height:100%; float:left"></div>-->
+
+<script type="text/javascript"> 
+function initialize() {
+  var myLatlng = new google.maps.LatLng(40.65, -73.95);
+  var myOptions = {
+    zoom: 12,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+ 
+  var map = new google.maps.Map(
+      document.getElementById("map_canvas"),
+      myOptions);
+ 
+  var nyLayer = new google.maps.KmlLayer(
+	  '<%= event_attendees_url(@event) %>.kml',
+      {  suppressInfoWindows: false,
+         map: map});
+ 
+/*  google.maps.event.addListener(nyLayer, 'click', function(kmlEvent) {
+    var text = kmlEvent.featureData.description;
+    showInContentWindow(text);
+  });*/
+ 
+/*  function showInContentWindow(text) {
+    var sidediv = document.getElementById('content_window');
+    sidediv.innerHTML = text;
+  }*/
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
