@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110814223815) do
+ActiveRecord::Schema.define(:version => 20110815072405) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20110814223815) do
     t.string   "street"
     t.string   "zip"
     t.string   "city"
+    t.string   "anagram"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

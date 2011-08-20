@@ -115,6 +115,10 @@ GEM
     addressable (2.2.4)
     annotate (2.4.0)
     arel (2.0.10)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.6.5)
@@ -171,6 +175,8 @@ GEM
     i18n (0.5.0)
     json (1.5.1)
     json_pure (1.5.1)
+    jwt (0.1.3)
+      json (>= 1.2.4)
     kgio (2.4.1)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -275,6 +281,10 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     ttfunk (1.0.2)
+    twilio-ruby (3.3.0)
+      builder (>= 2.1.2)
+      jwt (>= 0.1.2)
+      multi_json (>= 1.0.3)
     tzinfo (0.3.27)
     unicorn (3.6.2)
       kgio (~> 2.3)
@@ -284,12 +294,14 @@ GEM
     warden (1.0.4)
       rack (>= 1.0)
     will_paginate (2.3.15)
+    xml-simple (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   annotate
+  aws-s3
   cancan
   capybara!
   cucumber-rails
@@ -322,6 +334,7 @@ DEPENDENCIES
   sqlite3
   sqlite3-ruby
   ssl_requirement
+  twilio-ruby
   unicorn
   vestal_versions (= 1.0.2)
   warden-facebook!

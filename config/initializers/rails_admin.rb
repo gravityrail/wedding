@@ -61,14 +61,10 @@ RailsAdmin.config do |config|
     list do
       field :first_name
       field :last_name
+      field :name
       field :email
-      field :street
       field :city
-      field :zip
-      field :region
       field :country
-      field :lat
-      field :lon
     end
   end
 

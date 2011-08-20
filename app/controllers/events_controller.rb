@@ -33,7 +33,7 @@ class EventsController < ApplicationController
 
       count = 0
       top = 692
-      User.attending(event).each do |guest|
+      User.attending(event).geo_scope(:origin => event).order('distance desc').each do |guest|
         left = (count % 2) * 250
         bounding_box [left, top], :width => 250, :height => 100 do
           bounding_box [10, 90], :width => 230 do
@@ -42,19 +42,31 @@ class EventsController < ApplicationController
             end
           end
           if(guest.has_location?)
-            bounding_box [10, 50], :width => 100 do
-              font("Helvetica", :size => 20, :style => :bold) do
-                text guest.distance_from(event).to_i.to_s
+            bounding_box [10, 50], :width => 60 do
+              pad_top(5) do
+                font("Helvetica", :size => 20, :style => :bold) do
+                  text guest.distance_from(event).to_i.to_s, :align => :center
+                end
               end
               font("Helvetica", :size => 10) do 
-                text "miles travelled"
+                text "miles", :align => :center
               end
+              stroke_bounds
             end
+            
+            #find farthest attendee
+            # farthest = User.attending(event).farthest(:origin => guest).first
+            #             bounding_box [120, 50], :width => 120 do 
+            #               text "Farthest Guest", :style => :bold, :align => :right
+            #               text farthest.name, :align => :right
+            #               text "#{farthest.city.titleize}, #{farthest.country}", :align => :right
+            #             end
           end
+          
           if(guest.has_address?)
             bounding_box [10, 65], :width => 150 do
               font("Helvetica", :size => 10, :style => :bold) do
-                text "#{guest.region}, #{guest.country}"
+                text "#{guest.city.titleize}, #{guest.country}"
               end
             end
           end
