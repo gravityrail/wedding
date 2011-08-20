@@ -6,6 +6,7 @@ development: &default
   s3_secret: 'ZR5Mzuo5Ye/K2d99EQzmgBMAhXzWrq5Qe0YFOhxC'
   twilio_account_sid: 'AC57966215aa6760ebd15aeaffac4c602f'
   twilio_token: '3e940e1dc0a15f0e2885aa9277157a57'
+  twilio_number: '+15304137840'
 
 test: &test
   <<: *default
