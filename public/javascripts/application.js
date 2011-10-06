@@ -3,6 +3,10 @@
 
 $(document).ready(function(){
   //$('.watermark').clearingInput();
+  //
+  $("#EVERYTHING_OVERLAY h1").lettering();
+  $("#EVERYTHING_OVERLAY h2").lettering();
+  $("#EVERYTHING_OVERLAY h3").lettering();
   form = $('form.edit_rsvp');
 
   $.backstretch("/images/tahoe.jpg");
