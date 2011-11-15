@@ -34,6 +34,7 @@ gem 'cancan'
 gem 'will_paginate'
 #gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
 gem 'meta_search'
+gem 'exifr'
 
 # Use unicorn as the web server
 # gem 'unicorn'

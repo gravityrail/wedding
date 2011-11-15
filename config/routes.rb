@@ -1,11 +1,16 @@
 Wedding::Application.routes.draw do
 
+  resources :photos
+
   match '/users/without_location' => 'pages#user_addresses', :as => 'user_addresses'
   
   resources :users
   
   resources :events do
     resources :rsvps
+    resources :photos
+    match 'photos/:email/upload', :controller => 'photos', :action => 'upload', :email => /[^\/]+/, :as => 'upload_photos'
+    
     match 'badges', :action => 'badges'
     match 'badges_pdf', :action => 'badges_pdf'
     match 'attendees', :action => 'attendees'

@@ -23,4 +23,8 @@ class UsersController < ApplicationController
     end
   end
   
+  def photos
+    
+  end
+  
 end

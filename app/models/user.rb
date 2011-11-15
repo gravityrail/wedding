@@ -6,9 +6,11 @@ class User < ActiveRecord::Base
 
   scope :attending, lambda { |event| User.joins(:rsvps).where('rsvps.event_id' => event.id, 'rsvps.attending' => 'yes') } 
   scope :without_location, where('city IS NULL OR (lat IS NULL and lon IS NULL)')
+  scope :with_songs, where("(romantic_song IS NOT NULL and romantic_song <> '') or (dance_song IS NOT NULL and dance_song <> '')")
   
   has_many :rsvp_guests, :foreign_key => 'guest_id'
   has_many :rsvps, :through => :rsvp_guests, :order => 'id asc'
+  has_many :photos
   
   before_validation :ensure_password, :on => :create
   before_validation :ensure_email
