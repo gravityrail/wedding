@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     end
     
     def twilio_sms(number, message)
-      twilio_account.sms.messages.create(:from => SITE['twilio_number'], :to => number, :body => message)
+      #twilio_account.sms.messages.create(:from => SITE['twilio_number'], :to => number, :body => message)
     end
     
   private

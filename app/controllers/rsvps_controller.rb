@@ -95,8 +95,8 @@ class RsvpsController < ApplicationController
     respond_to do |format|
       if @rsvp.update_attributes(params[:rsvp])
         sms_message = "RSVP updated for #{@rsvp.guests.collect{|g|g.email}.join(", ")}. Attending? #{@rsvp.attending}"
-        twilio_sms_dan sms_message
-        twilio_sms_kellea sms_message
+        #twilio_sms_dan sms_message
+        #twilio_sms_kellea sms_message
         format.html { 
           #redirect_to(@rsvp, :notice => 'Rsvp was successfully updated.') 
           redirect_to show_event_path(@event.id, email), :notice => 'Rsvp was successfully updated.'
@@ -104,7 +104,7 @@ class RsvpsController < ApplicationController
         format.xml  { head :ok }
       else
         flash[:notice] = "Error saving: #{@rsvp.errors.to_a.join(', ')}"
-        format.html { render :action => "complete", :id => @rsvp.guests.first.email }
+        format.html { redirect_to event_complete_rsvp_path(@event.id, email) }
         format.xml  { render :xml => @rsvp.errors, :status => :unprocessable_entity }
       end
     end

@@ -46,8 +46,8 @@ Wedding::Application.routes.draw do
   match "/rsvp_melbourne" => "pages#rsvp_melbourne"
   
   #generic routes for callme controller
-  match ':controller(/:action(.:format))'
-  match ':controller(/:action(/:id(.:format)))'
+#  match ':controller(/:action(.:format))'
+#  match ':controller(/:action(/:id(.:format)))'
   
   root :to => 'pages#home'
  

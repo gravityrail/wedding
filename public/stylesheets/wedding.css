@@ -126,13 +126,18 @@ p.notice {
   font-size: 120%;
 }
 
+#logo {
+	padding-top: 20px;
+}
+
 #body .column, #logo {
-  background-color: #910600;
+  background-color: #005500;
   color: #FFF;
 }
 
 #main {
-  padding: 10px;
+  padding: 20px;
+	padding-bottom: 50px;
 }
 
 div.table_header {
@@ -265,4 +270,13 @@ div.pager a.prev_page, div.pager a.next_page{
   margin: 10px;
   background-color: #FFFF88;
   color: black;
+}
+
+#koala {
+	background:transparent url(/images/koala.png) no-repeat 0 0;
+	width: 230px;
+	height: 500px;
+	position: absolute;
+	right: -180px;
+	top: 10px;
 }

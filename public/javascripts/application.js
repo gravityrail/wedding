@@ -5,7 +5,7 @@ $(document).ready(function(){
   //$('.watermark').clearingInput();
   form = $('form.edit_rsvp');
 
-  $.backstretch("/images/tahoe.jpg");
+  $.backstretch("/images/melbourne.jpg");
 
   //make input buttons style-able with icons
   /*$('input:submit, input:reset').each(function(){
@@ -14,6 +14,8 @@ $(document).ready(function(){
 
 
   form.find('#attending').buttonset();  
+	form.find('#attending_day').buttonset();  
+	
   $('.button').button();
   $('.add-button').button({icons: {primary: 'ui-icon-circle-plus'}});
   $('.save-button').button({icons: {primary: 'ui-icon-check'}});
@@ -29,18 +31,47 @@ $(document).ready(function(){
 
   form.find('.fields').each(decorateRsvp);
 
-
-  //if no selected values, hide details and scroll down when selected
-  if(typeof($('#attending :radio:checked').val()) == 'undefined') {
-    form.find('#attending_details').hide();
-    form.find('#attending :radio').click(function(){
-      $('#attending_details').slideDown(2000);
-    });
-  }
+	form.find('#not_attending_details').hide();
+	form.find('#attending_details').hide();
+	
+	if(attendingValue('yes') || attendingValue('maybe')) {
+		form.find('#attending_details').show();
+	} else if(attendingValue('no')) {
+		form.find('#not_attending_details').show();
+	} else {
+		
+	}
+	
+	form.find('#attending :radio').click(function(){
+		if($(this).val() != 'no') {
+			$('#not_attending_details').hide();
+    	$('#attending_details').slideDown(2000);
+		} else {
+			$('#attending_details').hide();
+			$('#not_attending_details').slideDown(500);
+		}
+  });
+	
+  // //if no selected values, hide details and scroll down when selected
+  //   if(typeof($('#attending :radio:checked').val()) == 'undefined') {
+  //     
+  //     
+  //   } else if(attendingVal() == 'no') {
+  // 		$('#not_attending_details')
+  // 	}
+// }
 
   //update fields on adding new child
   form.bind('nested:fieldAdded', decorateRsvp);
 });
+
+function attendingValue(queryVal) {
+	var val = $('#attending :radio:checked').val();
+	if(val == queryVal) {
+		return true;
+	}
+	return false;
+}
 
 function decorateRsvp() {
 //  $(this).find('.watermark').watermark();

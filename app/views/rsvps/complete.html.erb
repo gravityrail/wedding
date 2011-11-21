@@ -19,7 +19,20 @@
     <% end %>
   </div>
 
+	<div id="not_attending_details">
+		<h2>Bummer - sorry to hear that. Thanks for letting us know!</h2>
+		<%= form.submit :value => 'Save My RSVP', :class => 'save-button big-button' %>
+	</div>
+
   <div id="attending_details">
+		<hr />
+		<h2 class="emboss_red">On which day(s)?</h2>
+		<div id="attending_day">
+			<% Rsvp::ATTENDING_DAY_ENUM.each do |att| %>
+	      <%= form.label "attending_day_#{att}".to_sym, att.capitalize %>
+	      <%= form.radio_button :attending_day, att %>
+	    <% end %>
+		</div>
     <%= form.fields_for :guests do |gf| %>
       <% guest = gf.object %>
       <% if guest.persisted? %>
@@ -32,7 +45,7 @@
         <div>
           <%= gf.text_field :first_name, :class => 'watermark', :placeholder => 'First Name' %>
           <%= gf.text_field :last_name, :class => 'watermark', :placeholder => 'Last Name' %>
-          <%= gf.text_field :email, :class => 'watermark', :placeholder => 'Email Address (optional)' %>
+          <%= gf.text_field :email, :class => 'watermark', :placeholder => 'Email Address (required)' %>
         </div>
         
         <h3>Dietary Preferences</h3>

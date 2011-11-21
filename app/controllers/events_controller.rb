@@ -29,7 +29,7 @@ class EventsController < ApplicationController
 
     Prawn::Document.generate(f.path, :page_size => "LETTER") do
 
-      event = Event.find(1)
+      event = Event.find(2)
 
       count = 0
       top = 692
@@ -63,7 +63,7 @@ class EventsController < ApplicationController
             #             end
           end
           
-          if(guest.has_address?)
+          if(guest.has_address? and not guest.city.nil?)
             bounding_box [10, 65], :width => 150 do
               font("Helvetica", :size => 10, :style => :bold) do
                 text "#{guest.city.titleize}, #{guest.country}"

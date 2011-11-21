@@ -1,6 +1,7 @@
 class Rsvp < ActiveRecord::Base
 
   ATTENDING_ENUM = ['yes', 'no', 'maybe']
+  ATTENDING_DAY_ENUM = ['saturday', 'sunday', 'both']
 
   belongs_to :event
   has_many :rsvp_guests
@@ -9,6 +10,8 @@ class Rsvp < ActiveRecord::Base
   accepts_nested_attributes_for :guests, :allow_destroy => true
 
   before_save :update_greeting
+  
+  validates_presence_of :attending_day, :if => Proc.new {|rsvp| ['yes', 'maybe'].include? rsvp.attending}
 
   def update_greeting
     @greeting = guests.map{|g| g.name}.join(' and ')

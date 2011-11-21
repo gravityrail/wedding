@@ -37,7 +37,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-1.6.3.min.js"%3E%3C/script%3E'))</script>
   <%# javascript_include_tag 'libs/jquery.tools.min.js' %>
-  <%= javascript_include_tag 'libs/jquery-ui-1.8.13.custom.min.js' %>
+  <%= javascript_include_tag 'libs/jquery-ui-1.8.16.custom.min.js' %>
   <%= javascript_include_tag 'libs/ui.watermark.js' %>
   <%= javascript_include_tag 'libs/jquery.tmpl.min.js' %>
   <%= javascript_include_tag 'libs/jquery.backstretch.min.js' %>
@@ -54,19 +54,20 @@
   <div id="container">
     <div id="main" role="main">
     <header>
-      <div class="row">
+      <div class="row" style="position: relative;">
         <div id="signup" class="column grid_12">
           <%= render :partial=>'shared/signup' %>
         </div>
       </div>
-
     </header>
     
-      <div class="row">
-        <div class="column grid_12">
+      <div class="row" style="overflow: visible;">
+        <div class="column grid_12" style="position: relative; overflow: visible;">
           <div id="logo">
-            <a href="/"><img src="/images/title.jpg" alt="Dan and Kellea's Wedding"/></a>
+            <a href="/"><img src="/images/title_melbourne.jpg" alt="Dan and Kellea's Wedding"/></a>
           </div>
+					<div id="koala">
+					</div>
           <%= yield(:header) %>
         </div>
       </div>
