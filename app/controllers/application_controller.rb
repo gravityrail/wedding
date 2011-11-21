@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
     end
     
     def twilio_sms_kellea(message)
-      twilio_sms('+15304120204', message)
+      #twilio_sms('+15304120204', message)
     end
     
     def twilio_sms(number, message)
-      #twilio_account.sms.messages.create(:from => SITE['twilio_number'], :to => number, :body => message)
+      twilio_account.sms.messages.create(:from => SITE['twilio_number'], :to => number, :body => message)
     end
     
   private

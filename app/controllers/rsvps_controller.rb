@@ -95,7 +95,7 @@ class RsvpsController < ApplicationController
     respond_to do |format|
       if @rsvp.update_attributes(params[:rsvp])
         sms_message = "RSVP updated for #{@rsvp.guests.collect{|g|g.email}.join(", ")}. Attending? #{@rsvp.attending}"
-        #twilio_sms_dan sms_message
+        twilio_sms_dan sms_message
         #twilio_sms_kellea sms_message
         format.html { 
           #redirect_to(@rsvp, :notice => 'Rsvp was successfully updated.') 
