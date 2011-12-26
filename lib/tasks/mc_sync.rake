@@ -89,6 +89,7 @@ namespace :wedding do
         puts "Error! No RSVP for #{guest.email}"
       else
         melb_attending = melb_rsvp.attending
+        melb_days = melb_rsvp.attending_days
         puts "#{guest.email} has melbourne RSVP: #{melb_rsvp.attending}"
       end
 
@@ -101,7 +102,7 @@ namespace :wedding do
         puts "#{guest.email} has tahoe RSVP: #{tahoe_rsvp.attending}"
       end
       
-      merge_vars = {'TAHOE_RSVP' => tahoe_attending, 'MELB_RSVP' => melb_attending}
+      merge_vars = {'TAHOE_RSVP' => tahoe_attending, 'MELB_RSVP' => melb_attending, 'MELB_DAYS' => melb_days}
       result = gb.list_update_member({:id => LIST_ID, :email_address => guest.email, :merge_vars => merge_vars})
       puts "update success: #{result}"
     end
