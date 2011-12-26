@@ -90,7 +90,7 @@ namespace :wedding do
         puts "Error! No RSVP for #{guest.email}"
       else
         melb_attending = melb_rsvp.attending
-        melb_days = melb_rsvp.attending_days
+        melb_days = melb_rsvp.attending_day
         puts "#{guest.email} has melbourne RSVP: #{melb_rsvp.attending}"
       end
 
