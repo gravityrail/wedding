@@ -67,7 +67,7 @@ group :development, :test do
   gem "unicorn"
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem "heroku"
-  gem "ruby-debug"
+#  gem "ruby-debug"
 
   gem "rspec-rails"
   gem 'shoulda'
@@ -87,5 +87,5 @@ group :development, :test do
 #  gem "autotest-rails-pure"
 #  gem "autotest-fsevent"
 
-  gem "rcov"
+#  gem "rcov"
 end
